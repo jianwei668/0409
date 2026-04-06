@@ -1,0 +1,14 @@
+﻿query_name,city,grade,benchmark_price_yuan_per_m2,benchmark_price_wan_per_mu,priority,query_text,comment,source_site,source_url,anchor_name,anchor_address,anchor_source_url,proxy_score_commercial_first_0_100,proxy_score_cost_first_0_100
+天鹅湖,合肥,2,29120,,1,合肥市蜀山区潜山路484号 新地中心,适合做政务/天鹅湖高价值锚点,房天下,https://fangjia.fang.com/HF/a016794-b03314/,新地中心,合肥市蜀山区潜山路484号,https://ditu.amap.com/place/B02270JMH9,86.1,13.9
+政务新区,合肥,3,24315,,1,合肥市蜀山区天鹅湖路558号 合肥市教育局,适合做政务区核心锚点,房天下,https://fangjia.fang.com/zoushi/c0hf/a016794/,合肥市教育局,合肥市蜀山区天鹅湖路558号合肥广电中心A区12-16层,https://ditu.amap.com/place/B02270JTP2,61.0,39.0
+滨湖新区,合肥,4,18662,,1,合肥市包河区徽州大道与紫云路交汇处东北侧 滨湖世纪城,适合做滨湖片区中高价锚点,房天下,https://fangjia.fang.com/zoushi/c0hf/a0880/,滨湖世纪城,合肥市包河区徽州大道与紫云路交汇处东北侧,https://ditu.amap.com/place/B022719DBW,31.5,68.5
+新省府,合肥,3,22664,,1,合肥市包河区广西路与紫云路交口 联通大厦,周度数据；适合作为新省府板块代理值,房天下,https://hf.esf.fang.com/newsecond/news/54391316.htm,中国邮政储蓄银行(滨湖支行),合肥市包河区广西路与紫云路交口联通大厦1层,https://ditu.amap.com/place/B0FFFRISR5,52.4,47.6
+滨湖金融中心,合肥,5,17499,,1,合肥 滨湖会展中心 地铁站,金融中心板块代理值，可单独并入滨湖模型,房天下,https://fangjia.fang.com/hf/a0880-b019676/,滨湖会展中心(地铁站),合肥市包河区1号线,https://ditu.amap.com/place/BV10536527,25.4,74.6
+高新区,合肥,5,16858,,1,合肥市蜀山区创新大道1800号,锚点取高新区核心商业/办公附近门店地址,中国房价行情,https://m.creprice.cn/district/GX.html?city=hf,老乡鸡(合肥高新区创新产业园银泰城亚朵酒店店),合肥市蜀山区高新区创新大道1800创新产业园二期J1楼A座102号,https://ditu.amap.com/place/B0FFI1ZLN1,22.1,77.9
+蜀西湖,合肥,4,21536,,1,合肥市蜀山区龙湖合肥高新天街,价格源为蜀西湖新房，锚点取周边商业地标,安居客,https://www.anjuke.com/xinfang/fj-hf/gaoxinqu_5291/2026/,龙湖合肥高新天街附近,合肥市蜀山区长宁社区服务中心龙湖合肥高新天街A4层38-40a号,https://ditu.amap.com/place/B0K2V79SCO,46.5,53.5
+经开区,合肥,5,14632,,1,合肥市蜀山区繁华大道271号,经开区整体代理值,中国房价行情,https://m.creprice.cn/district/JK.html?city=hf,三河酒家(明珠广场店),合肥市蜀山区经济开发区繁华大道271号,https://ditu.amap.com/place/B02270JNB7,10.4,89.6
+明珠广场,合肥,5,15467,,1,合肥市蜀山区繁华大道271号 三河酒家(明珠广场店),经开区明珠广场热点锚点,房天下,https://fangjia.fang.com/HF/a016793-b03309/,三河酒家(明珠广场店),合肥市蜀山区经济开发区繁华大道271号,https://ditu.amap.com/place/B02270JNB7,14.8,85.2
+南艳湖,合肥,5,18285,,1,合肥市蜀山区习友路与观海路交叉口 南艳湖公园,经开/南艳湖热点锚点,房天下,https://fangjia.fang.com/zoushi/c0hf/a016793-b03311/,南艳湖公园,合肥市蜀山区习友路与观海路交叉口,https://ditu.amap.com/place/B022715LJ0,29.5,70.5
+翡翠湖(以高值社区代理),合肥,1,31774,,1,合肥市蜀山区翡翠路 合肥工业大学翡翠湖校区西门对面,价格用绿城·翡翠湖玫瑰园代理，适合做翡翠湖高值锚点,中国房价行情,https://m.creprice.cn/community/0008100468.html?city=hf,翡翠湖风景区,合肥市蜀山区翡翠路合肥工业大学翡翠湖校区西门对面,https://ditu.amap.com/place/B02270IKF4,100.0,0.0
+四里河,合肥,6,12634,,1,合肥市庐阳区四里河路与银杏大街交叉口 万科森林公园,庐阳四里河板块代理值,58同城,https://hf.58.com/fangjia/14133/,万科森林公园,合肥市庐阳区四里河路与银杏大街交叉口,https://ditu.amap.com/place/B02271A9D0,0.0,100.0
+庐阳环城公园附近,合肥,3,23747,,1,合肥市蜀山区长江西路 琥珀山庄,用庐阳区整体均价代理环城公园周边高值区域,中国房价行情,https://m.creprice.cn/city/hf.html,琥珀山庄,合肥市蜀山区长江西路(近环城公园),https://ditu.amap.com/place/B022715AIW,58.1,41.9

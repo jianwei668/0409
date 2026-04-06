@@ -1,0 +1,1202 @@
+[
+  {
+    "name": "丙子铺",
+    "lat": 31.6933795,
+    "lon": 117.2919403,
+    "name_en": "Bingzipu"
+  },
+  {
+    "name": "九联圩",
+    "lat": 31.6933471,
+    "lon": 117.2807372,
+    "name_en": "Jiulianwei"
+  },
+  {
+    "name": "高王",
+    "lat": 31.7749324,
+    "lon": 117.2858507,
+    "name_en": "Gaowang"
+  },
+  {
+    "name": "骆岗",
+    "lat": 31.7850886,
+    "lon": 117.2860048,
+    "name_en": "Luogang"
+  },
+  {
+    "name": "南站南广场",
+    "lat": 31.7945458,
+    "lon": 117.2859514,
+    "name_en": "Hefei South Station South Square"
+  },
+  {
+    "name": "望湖城",
+    "lat": 31.8075499,
+    "lon": 117.2868337,
+    "name_en": "Wanghucheng"
+  },
+  {
+    "name": "葛大店",
+    "lat": 31.816469,
+    "lon": 117.2980393,
+    "name_en": "Gedadian"
+  },
+  {
+    "name": "秋浦河路",
+    "lat": 31.8253703,
+    "lon": 117.2966346,
+    "name_en": "Qiupuhelu"
+  },
+  {
+    "name": "合工大南区",
+    "lat": 31.8492551,
+    "lon": 117.2951521,
+    "name_en": "Hefei University of Technology South Campus"
+  },
+  {
+    "name": "包公园",
+    "lat": 31.858147,
+    "lon": 117.2957533,
+    "name_en": "Baogongyuan"
+  },
+  {
+    "name": "明光路",
+    "lat": 31.8720592,
+    "lon": 117.2993577,
+    "name_en": "Mingguanglu"
+  },
+  {
+    "name": "长淮",
+    "lat": 31.8774087,
+    "lon": 117.3036709,
+    "name_en": "Changhuai"
+  },
+  {
+    "name": "幸福坝",
+    "lat": 31.7531885,
+    "lon": 117.1755126,
+    "name_en": "Xingfuba"
+  },
+  {
+    "name": "安大磬苑校区",
+    "lat": 31.7612566,
+    "lon": 117.1866826,
+    "name_en": "Andaqingyuanxiaoqu"
+  },
+  {
+    "name": "工大翡翠湖校区",
+    "lat": 31.7673985,
+    "lon": 117.1996609,
+    "name_en": "Gongdafeicuihuxiaoqu"
+  },
+  {
+    "name": "大学城北",
+    "lat": 31.7770118,
+    "lon": 117.2042861,
+    "name_en": "Daxuechengbei"
+  },
+  {
+    "name": "安医大二附院",
+    "lat": 31.7918037,
+    "lon": 117.2044083,
+    "name_en": "Anyida'erfuyuan"
+  },
+  {
+    "name": "繁华大道",
+    "lat": 31.7843725,
+    "lon": 117.2032415,
+    "name_en": "Fanhuadadao"
+  },
+  {
+    "name": "省博物馆",
+    "lat": 31.8029762,
+    "lon": 117.2098212,
+    "name_en": "Shengbowuyuan"
+  },
+  {
+    "name": "合肥大剧院",
+    "lat": 31.8163005,
+    "lon": 117.2184959,
+    "name_en": "Hefeidajuyuan"
+  },
+  {
+    "name": "市政务中心",
+    "lat": 31.8236772,
+    "lon": 117.2263983,
+    "name_en": "Shizhengwuzhongxin"
+  },
+  {
+    "name": "洪岗",
+    "lat": 31.8342389,
+    "lon": 117.225981,
+    "name_en": "Honggang"
+  },
+  {
+    "name": "国防科技大学",
+    "lat": 31.8428986,
+    "lon": 117.2257438,
+    "name_en": "Guofangkejidaxue"
+  },
+  {
+    "name": "三十埠",
+    "lat": 31.8708214,
+    "lon": 117.3915512,
+    "name_en": "Sanshibu"
+  },
+  {
+    "name": "龙岗",
+    "lat": 31.8702725,
+    "lon": 117.370088,
+    "name_en": "Longgang"
+  },
+  {
+    "name": "东二十埠",
+    "lat": 31.8701963,
+    "lon": 117.3614351,
+    "name_en": "Dong'ershibu"
+  },
+  {
+    "name": "科学大道",
+    "lat": 31.8577257,
+    "lon": 117.2037764,
+    "name_en": "Kexue Dadao"
+  },
+  {
+    "name": "张洼",
+    "lat": 31.9199889,
+    "lon": 117.3165943,
+    "name_en": "Zhangwa"
+  },
+  {
+    "name": "万年埠",
+    "lat": 31.7005586,
+    "lon": 117.2965006,
+    "name_en": "Wannianbu"
+  },
+  {
+    "name": "万达城",
+    "lat": 31.7077415,
+    "lon": 117.2965323,
+    "name_en": "Wandacheng"
+  },
+  {
+    "name": "金斗公园",
+    "lat": 31.7248551,
+    "lon": 117.297091,
+    "name_en": "Jindougongyuan"
+  },
+  {
+    "name": "塘西河公园",
+    "lat": 31.7333322,
+    "lon": 117.2970614,
+    "name_en": "Tangxihegongyuan"
+  },
+  {
+    "name": "紫庐",
+    "lat": 31.742819,
+    "lon": 117.2977189,
+    "name_en": "Zilu"
+  },
+  {
+    "name": "滨湖会展中心",
+    "lat": 31.7565705,
+    "lon": 117.2971205,
+    "name_en": "Binhu International Convention Center"
+  },
+  {
+    "name": "合肥火车站",
+    "lat": 31.8853159,
+    "lon": 117.3098017,
+    "name_en": "Hefei Railway Station"
+  },
+  {
+    "name": "兴华苑",
+    "lat": 31.9054785,
+    "lon": 117.3081526,
+    "name_en": "Xinghuayuan"
+  },
+  {
+    "name": "漕冲",
+    "lat": 31.8699608,
+    "lon": 117.3459358,
+    "name_en": "Caochong"
+  },
+  {
+    "name": "东七里",
+    "lat": 31.8697738,
+    "lon": 117.3325665,
+    "name_en": "Dong Qili"
+  },
+  {
+    "name": "东五里井",
+    "lat": 31.8697286,
+    "lon": 117.3191706,
+    "name_en": "Dong Wulijing"
+  },
+  {
+    "name": "三里街",
+    "lat": 31.8696153,
+    "lon": 117.308313,
+    "name_en": "Sanlijie"
+  },
+  {
+    "name": "四牌楼",
+    "lat": 31.8636352,
+    "lon": 117.2843552,
+    "name_en": "Sipailou"
+  },
+  {
+    "name": "三孝口",
+    "lat": 31.8631591,
+    "lon": 117.2698517,
+    "name_en": "Sanxiaokou"
+  },
+  {
+    "name": "安农大",
+    "lat": 31.860161,
+    "lon": 117.2597638,
+    "name_en": "Anhui Agriculture University"
+  },
+  {
+    "name": "三里庵",
+    "lat": 31.8567465,
+    "lon": 117.2505061,
+    "name_en": "Sanli'an"
+  },
+  {
+    "name": "五里墩",
+    "lat": 31.8529118,
+    "lon": 117.2355608,
+    "name_en": "Wulidun"
+  },
+  {
+    "name": "西七里塘",
+    "lat": 31.8542739,
+    "lon": 117.2254075,
+    "name_en": "Xiqilitang"
+  },
+  {
+    "name": "十里庙",
+    "lat": 31.8566204,
+    "lon": 117.2177909,
+    "name_en": "Shilimiao"
+  },
+  {
+    "name": "天柱路",
+    "lat": 31.8560148,
+    "lon": 117.19317,
+    "name_en": "Tianzhu Lu"
+  },
+  {
+    "name": "大蜀山",
+    "lat": 31.8537515,
+    "lon": 117.1804692,
+    "name_en": "Dashushan"
+  },
+  {
+    "name": "蜀山西",
+    "lat": 31.8533738,
+    "lon": 117.1629098,
+    "name_en": "Shushan Xi"
+  },
+  {
+    "name": "振兴路",
+    "lat": 31.8530748,
+    "lon": 117.1461537,
+    "name_en": "Zhenxing Lu"
+  },
+  {
+    "name": "汽车西站",
+    "lat": 31.8529383,
+    "lon": 117.130752,
+    "name_en": "Qiche Xizhan"
+  },
+  {
+    "name": "桂庄",
+    "lat": 31.8526607,
+    "lon": 117.1213933,
+    "name_en": "Guizhuang"
+  },
+  {
+    "name": "南岗",
+    "lat": 31.8525251,
+    "lon": 117.1101752,
+    "name_en": "Nangang"
+  },
+  {
+    "name": "鸭林冲",
+    "lat": 31.8896149,
+    "lon": 117.3026053,
+    "name_en": "Yalinchong"
+  },
+  {
+    "name": "淮南路",
+    "lat": 31.8895334,
+    "lon": 117.2905388,
+    "name_en": "Huainan Street"
+  },
+  {
+    "name": "文浍苑",
+    "lat": 31.9117711,
+    "lon": 117.3626572,
+    "name_en": "Wenhuiyuan"
+  },
+  {
+    "name": "合肥西站",
+    "lat": 31.8738569,
+    "lon": 117.2307239,
+    "name_en": "Hefeixi Railway Station"
+  },
+  {
+    "name": "南新庄",
+    "lat": 31.8637073,
+    "lon": 117.2251939,
+    "name_en": "Nanxinzhuang"
+  },
+  {
+    "name": "杏花村",
+    "lat": 31.8830233,
+    "lon": 117.2406379,
+    "name_en": "Xinghuacun"
+  },
+  {
+    "name": "四泉桥",
+    "lat": 31.8886114,
+    "lon": 117.2513911,
+    "name_en": "Siquanqiao"
+  },
+  {
+    "name": "郑河",
+    "lat": 31.8887712,
+    "lon": 117.2627214,
+    "name_en": "Zhenghe"
+  },
+  {
+    "name": "海棠",
+    "lat": 31.8889595,
+    "lon": 117.2729012,
+    "name_en": "Haitang"
+  },
+  {
+    "name": "一里井",
+    "lat": 31.8890468,
+    "lon": 117.2817269,
+    "name_en": "Yilijing"
+  },
+  {
+    "name": "窦桥湾",
+    "lat": 31.8868868,
+    "lon": 117.3467532,
+    "name_en": "Douqiaowan"
+  },
+  {
+    "name": "新海大道",
+    "lat": 31.8921848,
+    "lon": 117.3535325,
+    "name_en": "Xinhaidadao"
+  },
+  {
+    "name": "勤劳村",
+    "lat": 31.8989323,
+    "lon": 117.3555695,
+    "name_en": "Qinlaocun"
+  },
+  {
+    "name": "青龙岗",
+    "lat": 31.8316487,
+    "lon": 117.082736,
+    "name_en": "Qinglonggang"
+  },
+  {
+    "name": "玉兰大道",
+    "lat": 31.8226406,
+    "lon": 117.1702435,
+    "name_en": "Yulandadao"
+  },
+  {
+    "name": "柳树塘",
+    "lat": 31.8136472,
+    "lon": 117.1928435,
+    "name_en": "Liushutang"
+  },
+  {
+    "name": "天鹅湖",
+    "lat": 31.810273,
+    "lon": 117.2221298,
+    "name_en": "Tian'ehu"
+  },
+  {
+    "name": "姚公庙",
+    "lat": 31.8106724,
+    "lon": 117.2437677,
+    "name_en": "Yaogongmiao"
+  },
+  {
+    "name": "南屏路",
+    "lat": 31.8105222,
+    "lon": 117.2519739,
+    "name_en": "Nanpinglu"
+  },
+  {
+    "name": "薛河",
+    "lat": 31.8097398,
+    "lon": 117.2634046,
+    "name_en": "Xuehe"
+  },
+  {
+    "name": "竹西",
+    "lat": 31.8052222,
+    "lon": 117.2709978,
+    "name_en": "Zhuxi"
+  },
+  {
+    "name": "五里庙",
+    "lat": 31.8392871,
+    "lon": 117.3184146,
+    "name_en": "Wulimiao"
+  },
+  {
+    "name": "唐桥",
+    "lat": 31.8560589,
+    "lon": 117.3299935,
+    "name_en": "Tangqiao"
+  },
+  {
+    "name": "站塘",
+    "lat": 31.8779157,
+    "lon": 117.3351855,
+    "name_en": "Zhantang"
+  },
+  {
+    "name": "新海公园",
+    "lat": 31.898603,
+    "lon": 117.3370585,
+    "name_en": "Xinhaigongyuan"
+  },
+  {
+    "name": "十里村",
+    "lat": 31.906717,
+    "lon": 117.3418144,
+    "name_en": "Shilicun"
+  },
+  {
+    "name": "淝南",
+    "lat": 31.8017155,
+    "lon": 117.2756057,
+    "name_en": "Feinan"
+  },
+  {
+    "name": "天鹅湖东",
+    "lat": 31.810681,
+    "lon": 117.2331209,
+    "name_en": "Tian'ehudong"
+  },
+  {
+    "name": "金桂",
+    "lat": 31.8181845,
+    "lon": 117.1822116,
+    "name_en": "Jingui"
+  },
+  {
+    "name": "合肥七中",
+    "lat": 31.8314255,
+    "lon": 117.0948261,
+    "name_en": "Hefei No.7 High School"
+  },
+  {
+    "name": "瑶海公园",
+    "lat": 31.8921833,
+    "lon": 117.3088307,
+    "name_en": "Yaohaigongyuan"
+  },
+  {
+    "name": "王岗",
+    "lat": 31.8706214,
+    "lon": 117.383849,
+    "name_en": "Wanggang"
+  },
+  {
+    "name": "大东门",
+    "lat": 31.8658551,
+    "lon": 117.2951406,
+    "name_en": "Dadongmen"
+  },
+  {
+    "name": "葛大店南",
+    "lat": 31.8108518,
+    "lon": 117.3076854,
+    "name_en": "Gedadiannan"
+  },
+  {
+    "name": "工经学院",
+    "lat": 31.8169047,
+    "lon": 117.3202253,
+    "name_en": "Gongjingxueyuan"
+  },
+  {
+    "name": "望湖城南",
+    "lat": 31.8068261,
+    "lon": 117.296715,
+    "name_en": "Wanghuchengnan"
+  },
+  {
+    "name": "图书馆",
+    "lat": 31.8110688,
+    "lon": 117.2100116,
+    "name_en": "Tushuguan"
+  },
+  {
+    "name": "方庙",
+    "lat": 31.8869729,
+    "lon": 117.3365368,
+    "name_en": "Fangmiao"
+  },
+  {
+    "name": "竹丝滩",
+    "lat": 31.8872122,
+    "lon": 117.3255467,
+    "name_en": "Zhusitan"
+  },
+  {
+    "name": "合肥南站",
+    "lat": 31.8021792,
+    "lon": 117.2846034,
+    "name_en": "Hefeinan Railway Station"
+  },
+  {
+    "name": "李湾",
+    "lat": 31.7204676,
+    "lon": 117.1507443,
+    "name_en": "Liwan"
+  },
+  {
+    "name": "安医一附院南区",
+    "lat": 31.7440064,
+    "lon": 117.1631947,
+    "name_en": "Anyi Yifuyuan Nanqu"
+  },
+  {
+    "name": "凉亭",
+    "lat": 31.7257854,
+    "lon": 117.1568727,
+    "name_en": "Liangting"
+  },
+  {
+    "name": "四十埠",
+    "lat": 31.7112065,
+    "lon": 117.1518102,
+    "name_en": ""
+  },
+  {
+    "name": "芮祠",
+    "lat": 31.7025987,
+    "lon": 117.1609256,
+    "name_en": "Ruici"
+  },
+  {
+    "name": "乐平",
+    "lat": 31.6964908,
+    "lon": 117.170328,
+    "name_en": "Leping"
+  },
+  {
+    "name": "省儿童医院新区",
+    "lat": 31.6891968,
+    "lon": 117.1702878,
+    "name_en": "Sheng Ertong Yiyuan Xinqu"
+  },
+  {
+    "name": "综保区",
+    "lat": 31.9528009,
+    "lon": 117.3483073,
+    "name_en": "Hefei Integrated Free Trade Zone"
+  },
+  {
+    "name": "安医一附院北区",
+    "lat": 31.9389091,
+    "lon": 117.3432327,
+    "name_en": "First Affiliated Hospital of Anhui Medical University North District"
+  },
+  {
+    "name": "陶冲湖东",
+    "lat": 31.9284246,
+    "lon": 117.3395942,
+    "name_en": "Taochonghudong"
+  },
+  {
+    "name": "望湖城西",
+    "lat": 31.8110768,
+    "lon": 117.2830962,
+    "name_en": "Wanghuchengxi"
+  },
+  {
+    "name": "盛大",
+    "lat": 31.7945902,
+    "lon": 117.296416,
+    "name_en": "Shengda"
+  },
+  {
+    "name": "包河苑",
+    "lat": 31.7957084,
+    "lon": 117.3117033,
+    "name_en": "Baoheyuan"
+  },
+  {
+    "name": "义兴",
+    "lat": 31.7965325,
+    "lon": 117.3191491,
+    "name_en": "Yixing"
+  },
+  {
+    "name": "大连路",
+    "lat": 31.7875513,
+    "lon": 117.326611,
+    "name_en": "Dalianlu"
+  },
+  {
+    "name": "花园大道",
+    "lat": 31.7753052,
+    "lon": 117.3285945,
+    "name_en": "Huayuandadao"
+  },
+  {
+    "name": "黄河路",
+    "lat": 31.7677027,
+    "lon": 117.3286052,
+    "name_en": "Huanghelu"
+  },
+  {
+    "name": "扬子江路",
+    "lat": 31.754764,
+    "lon": 117.3331381,
+    "name_en": "Yangzijianglu"
+  },
+  {
+    "name": "义城",
+    "lat": 31.7427199,
+    "lon": 117.3330925,
+    "name_en": "Yicheng"
+  },
+  {
+    "name": "省政务中心东",
+    "lat": 31.7332704,
+    "lon": 117.333051,
+    "name_en": "Shengzhengwuzhongxindong"
+  },
+  {
+    "name": "方兴湖",
+    "lat": 31.7201512,
+    "lon": 117.3330188,
+    "name_en": "Fangxinghu"
+  },
+  {
+    "name": "渡江纪念馆",
+    "lat": 31.715086,
+    "lon": 117.3245712,
+    "name_en": "Dujiangjinianguan"
+  },
+  {
+    "name": "华山路",
+    "lat": 31.7151283,
+    "lon": 117.3055141,
+    "name_en": "Huashanlu"
+  },
+  {
+    "name": "沈湾",
+    "lat": 31.7151066,
+    "lon": 117.3139416,
+    "name_en": "Shenwan"
+  },
+  {
+    "name": "云谷路",
+    "lat": 31.715131,
+    "lon": 117.2965428,
+    "name_en": "Yungulu"
+  },
+  {
+    "name": "清水冲",
+    "lat": 31.7151421,
+    "lon": 117.2806685,
+    "name_en": "Qingshuichong"
+  },
+  {
+    "name": "云川公园",
+    "lat": 31.7151579,
+    "lon": 117.2699735,
+    "name_en": "Yunchuan Park"
+  },
+  {
+    "name": "滨湖竹园",
+    "lat": 31.7114136,
+    "lon": 117.2586089,
+    "name_en": "Binhuzhuyuan"
+  },
+  {
+    "name": "贵阳路",
+    "lat": 31.7012466,
+    "lon": 117.258566,
+    "name_en": "Guiyanglu"
+  },
+  {
+    "name": "相城路",
+    "lat": 31.9269652,
+    "lon": 117.4019577,
+    "name_en": "Xiangchenglu"
+  },
+  {
+    "name": "职教城东",
+    "lat": 31.9269694,
+    "lon": 117.3915935,
+    "name_en": "Zhijiaochengdong"
+  },
+  {
+    "name": "职教城",
+    "lat": 31.9270103,
+    "lon": 117.3775569,
+    "name_en": ""
+  },
+  {
+    "name": "幼儿师范",
+    "lat": 31.9232239,
+    "lon": 117.3667851,
+    "name_en": ""
+  },
+  {
+    "name": "尧渡河路",
+    "lat": 31.8271612,
+    "lon": 117.318623,
+    "name_en": "Yaoduhelu"
+  },
+  {
+    "name": "北雁湖",
+    "lat": 31.8228455,
+    "lon": 117.1521809,
+    "name_en": "Beiyanhu"
+  },
+  {
+    "name": "量子科学中心",
+    "lat": 31.8319844,
+    "lon": 117.1097124,
+    "name_en": "QISRC"
+  },
+  {
+    "name": "科大先研院",
+    "lat": 31.8321462,
+    "lon": 117.1286128,
+    "name_en": "IAT-USTC"
+  },
+  {
+    "name": "复兴集",
+    "lat": 31.8177748,
+    "lon": 117.1394791,
+    "name_en": ""
+  },
+  {
+    "name": "桃花潭",
+    "lat": 31.7843742,
+    "lon": 117.1322072,
+    "name_en": ""
+  },
+  {
+    "name": "长安集",
+    "lat": 31.8047413,
+    "lon": 117.1396503,
+    "name_en": ""
+  },
+  {
+    "name": "金小郢",
+    "lat": 31.784333,
+    "lon": 117.1112101,
+    "name_en": ""
+  },
+  {
+    "name": "铜锣寨路",
+    "lat": 31.7677959,
+    "lon": 117.0869302,
+    "name_en": "Tongluozhai Road"
+  },
+  {
+    "name": "魏庄",
+    "lat": 31.7614573,
+    "lon": 117.0892226,
+    "name_en": "Weizhuang"
+  },
+  {
+    "name": "烧脉岗",
+    "lat": 31.7571678,
+    "lon": 117.0964298,
+    "name_en": "Shaomaigang"
+  },
+  {
+    "name": "馆驿",
+    "lat": 31.6808671,
+    "lon": 117.1532759,
+    "name_en": ""
+  },
+  {
+    "name": "T1航站楼",
+    "lat": 31.98794,
+    "lon": 116.9632589,
+    "name_en": ""
+  },
+  {
+    "name": "紫云湖",
+    "lat": 31.7571604,
+    "lon": 117.1097065,
+    "name_en": "Ziyun Lake"
+  },
+  {
+    "name": "三十埠东",
+    "lat": 31.8737887,
+    "lon": 117.4141246,
+    "name_en": "Sanshibudong"
+  },
+  {
+    "name": "祥和",
+    "lat": 31.8758821,
+    "lon": 117.4239241,
+    "name_en": "Xianghe"
+  },
+  {
+    "name": "桂王",
+    "lat": 31.8757631,
+    "lon": 117.4370484,
+    "name_en": "Guiwang"
+  },
+  {
+    "name": "对河",
+    "lat": 31.8744432,
+    "lon": 117.4496656,
+    "name_en": "Duihe"
+  },
+  {
+    "name": "店埠河",
+    "lat": 31.8770697,
+    "lon": 117.4661978,
+    "name_en": "Dianbuhe"
+  },
+  {
+    "name": "排头",
+    "lat": 31.872964,
+    "lon": 117.4751401,
+    "name_en": "Paitou"
+  },
+  {
+    "name": "肥东站",
+    "lat": 31.8613637,
+    "lon": 117.4803524,
+    "name_en": "Feidong Railway Station"
+  },
+  {
+    "name": "和睦湖",
+    "lat": 31.8538961,
+    "lon": 117.4866259,
+    "name_en": "Hemuhu"
+  },
+  {
+    "name": "马桥",
+    "lat": 31.8466877,
+    "lon": 117.4865926,
+    "name_en": "Maqiao"
+  },
+  {
+    "name": "南沙河",
+    "lat": 31.835705,
+    "lon": 117.486529,
+    "name_en": "Nanshahe"
+  },
+  {
+    "name": "撮镇",
+    "lat": 31.8243964,
+    "lon": 117.4864574,
+    "name_en": "Cuozhen"
+  },
+  {
+    "name": "龙塘",
+    "lat": 31.8384086,
+    "lon": 117.4114432,
+    "name_en": "Longtang"
+  },
+  {
+    "name": "伏龙",
+    "lat": 31.8396449,
+    "lon": 117.3928688,
+    "name_en": "Fulong"
+  },
+  {
+    "name": "大兴集",
+    "lat": 31.8376999,
+    "lon": 117.3798469,
+    "name_en": "Daxingji"
+  },
+  {
+    "name": "钢红",
+    "lat": 31.8299052,
+    "lon": 117.3724327,
+    "name_en": "Ganghong"
+  },
+  {
+    "name": "市博物馆",
+    "lat": 31.833375,
+    "lon": 117.3607658,
+    "name_en": ""
+  },
+  {
+    "name": "市儿童医院",
+    "lat": 31.8376791,
+    "lon": 117.3498802,
+    "name_en": ""
+  },
+  {
+    "name": "唐大楼",
+    "lat": 31.8301289,
+    "lon": 117.3295549,
+    "name_en": ""
+  },
+  {
+    "name": "卫岗",
+    "lat": 31.8324843,
+    "lon": 117.2798519,
+    "name_en": "Weigang"
+  },
+  {
+    "name": "市第三医院",
+    "lat": 31.8306564,
+    "lon": 117.2652005,
+    "name_en": "Hefei No.3 People's Hospital"
+  },
+  {
+    "name": "南七里",
+    "lat": 31.8320412,
+    "lon": 117.2524082,
+    "name_en": "Nanqili"
+  },
+  {
+    "name": "炮兵学院",
+    "lat": 31.8326929,
+    "lon": 117.2407171,
+    "name_en": "Lujun Bingzhong Daxue"
+  },
+  {
+    "name": "松荫桥",
+    "lat": 31.8354729,
+    "lon": 117.2166789,
+    "name_en": "Songyinqiao"
+  },
+  {
+    "name": "梦城",
+    "lat": 31.8346877,
+    "lon": 117.1973587,
+    "name_en": "Mengcheng"
+  },
+  {
+    "name": "开福寺",
+    "lat": 31.8336857,
+    "lon": 117.1793492,
+    "name_en": "Kaifusi"
+  },
+  {
+    "name": "凌大塘",
+    "lat": 31.8161673,
+    "lon": 117.2712511,
+    "name_en": "Lingdatang"
+  },
+  {
+    "name": "休宁路",
+    "lat": 31.8204665,
+    "lon": 117.2634461,
+    "name_en": ""
+  },
+  {
+    "name": "中国科大东区",
+    "lat": 31.8438331,
+    "lon": 117.2675397,
+    "name_en": ""
+  },
+  {
+    "name": "稻香楼",
+    "lat": 31.851382,
+    "lon": 117.2684299,
+    "name_en": "Daoxianglou"
+  },
+  {
+    "name": "杏花公园",
+    "lat": 31.8730505,
+    "lon": 117.2730653,
+    "name_en": "Xinghua Park"
+  },
+  {
+    "name": "白水坝",
+    "lat": 31.881566,
+    "lon": 117.2729431,
+    "name_en": "Baishuiba"
+  },
+  {
+    "name": "北五里井",
+    "lat": 31.899516,
+    "lon": 117.2700751,
+    "name_en": "Beiwulijing"
+  },
+  {
+    "name": "菱湖公园",
+    "lat": 31.9189745,
+    "lon": 117.2661599,
+    "name_en": "Linghu Park"
+  },
+  {
+    "name": "六中菱湖校区",
+    "lat": 31.9319216,
+    "lon": 117.2645732,
+    "name_en": "Hefei No. 6 High School Linghu Campus"
+  },
+  {
+    "name": "汲桥路",
+    "lat": 31.9429963,
+    "lon": 117.258289,
+    "name_en": "Jiqiao Road"
+  },
+  {
+    "name": "杏林",
+    "lat": 31.9054197,
+    "lon": 117.2785101,
+    "name_en": ""
+  },
+  {
+    "name": "庐阳经开区",
+    "lat": 31.9251966,
+    "lon": 117.274557,
+    "name_en": ""
+  },
+  {
+    "name": "荷塘路",
+    "lat": 31.9381071,
+    "lon": 117.2543029,
+    "name_en": ""
+  },
+  {
+    "name": "双凤",
+    "lat": 31.9585573,
+    "lon": 117.2515035,
+    "name_en": ""
+  },
+  {
+    "name": "金梅路",
+    "lat": 31.9778419,
+    "lon": 117.2493729,
+    "name_en": ""
+  },
+  {
+    "name": "梅冲湖",
+    "lat": 31.9967962,
+    "lon": 117.2484686,
+    "name_en": ""
+  },
+  {
+    "name": "北城世纪城",
+    "lat": 32.0130302,
+    "lon": 117.2424736,
+    "name_en": ""
+  },
+  {
+    "name": "双墩",
+    "lat": 32.031539,
+    "lon": 117.2431083,
+    "name_en": ""
+  },
+  {
+    "name": "省立医院北区",
+    "lat": 32.0465591,
+    "lon": 117.2406001,
+    "name_en": ""
+  },
+  {
+    "name": "北城高铁站",
+    "lat": 32.0647806,
+    "lon": 117.2508258,
+    "name_en": ""
+  },
+  {
+    "name": "松林路",
+    "lat": 31.7844265,
+    "lon": 117.1908483,
+    "name_en": ""
+  },
+  {
+    "name": "松谷路",
+    "lat": 31.7828758,
+    "lon": 117.2157493,
+    "name_en": ""
+  },
+  {
+    "name": "莲花路",
+    "lat": 31.7783633,
+    "lon": 117.2258393,
+    "name_en": ""
+  },
+  {
+    "name": "天都路",
+    "lat": 31.7783,
+    "lon": 117.2336335,
+    "name_en": ""
+  },
+  {
+    "name": "石门路",
+    "lat": 31.7728164,
+    "lon": 117.2446921,
+    "name_en": ""
+  },
+  {
+    "name": "耕耘路",
+    "lat": 31.7618224,
+    "lon": 117.2446615,
+    "name_en": ""
+  },
+  {
+    "name": "清潭路",
+    "lat": 31.7553479,
+    "lon": 117.2542327,
+    "name_en": ""
+  },
+  {
+    "name": "习友路",
+    "lat": 31.7580461,
+    "lon": 117.2647773,
+    "name_en": ""
+  },
+  {
+    "name": "要素大市场",
+    "lat": 31.7520769,
+    "lon": 117.2805106,
+    "name_en": ""
+  },
+  {
+    "name": "广西路",
+    "lat": 31.7426345,
+    "lon": 117.2858506,
+    "name_en": ""
+  },
+  {
+    "name": "嵩山路",
+    "lat": 31.7428612,
+    "lon": 117.3095102,
+    "name_en": ""
+  },
+  {
+    "name": "徽富路",
+    "lat": 31.7427059,
+    "lon": 117.3187228,
+    "name_en": ""
+  },
+  {
+    "name": "天津路",
+    "lat": 31.7427719,
+    "lon": 117.3433235,
+    "name_en": ""
+  },
+  {
+    "name": "朱岗",
+    "lat": 31.8341046,
+    "lon": 117.2962536,
+    "name_en": "Zhugang"
+  }
+]

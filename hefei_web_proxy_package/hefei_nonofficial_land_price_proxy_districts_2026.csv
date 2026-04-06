@@ -1,0 +1,11 @@
+﻿area_name,proxy_price_yuan_per_m2,snapshot,metric,source_site,source_url,query_text,notes,proxy_score_commercial_first_0_100,proxy_score_cost_first_0_100,suggested_grade_6_high_to_low
+合肥市,14770,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥市中心,全市基准参考，不建议直接作为单点锚点,34.8,65.2,4
+庐阳区,23747,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 庐阳区,适合作为高价核心区参考,100.0,0.0,1
+政务区,21742,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 政务区,商圈成熟度高，适合商圈优先模型,85.4,14.6,2
+滨湖新区,18137,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 滨湖新区,新省府/金融中心内部差异较大,59.3,40.7,3
+蜀山区,17597,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 蜀山区,可与政务、经开拆开用,55.3,44.7,3
+高新区,16858,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 高新区,蜀西湖/科学大道等板块内部差异较大,50.0,50.0,4
+包河区,15581,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 包河区,可与骆岗、公园、南站等热点再细分,40.7,59.3,4
+经开区,14339,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 经开区,明珠广场、南艳湖、翡翠湖周边更适合用热点锚点,31.7,68.3,4
+瑶海区,11935,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 瑶海区,东部新中心可单独补热点,14.2,85.8,5
+新站区,9977,2026-01,住宅挂牌均价,中国房价行情,https://m.creprice.cn/city/hf.html,合肥 新站区,适合作为低成本区参考,0.0,100.0,6

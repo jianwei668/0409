@@ -1,0 +1,4 @@
+﻿id,brand,store_name,status,district,address,longitude_wgs84,latitude_wgs84,coordinate_method,coordinate_confidence,phone,source_group,source_note,notes
+HX001,巴莉甜甜,巴莉甜甜(清溪路大润发店),inactive_or_uncertain,蜀山区,清溪路与合作化北路交叉口大润发一楼1111-1112室,,,address_only,medium,0551-65157023,web,directory result + later closure news,品牌层面2025-2026公开报道显示门店大面积/全部停摆，默认不纳入竞争评分
+HX002,巴莉甜甜,巴莉甜甜(胜利店),inactive_or_uncertain,瑶海区,胜利路元一时代广场F1,117.31416,31.88051,mall_centroid_approx,low,,web,tripadvisor listing + later closure news,历史门店，建议默认排除
+HX003,丰蝶来,丰蝶来(陶冲湖168店等历史门店),inactive_or_uncertain,新站区等,历史门店，详址待补,,,none,low,,web,closure news,2025公开报道显示丰蝶来门店全部歇业，建议默认排除

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>合肥烘焙竞争门店_历史或疑似停业</name>
+<Placemark>
+<name>巴莉甜甜(胜利店)</name>
+<description>id: HX002
+brand: 巴莉甜甜
+store_name: 巴莉甜甜(胜利店)
+status: inactive_or_uncertain
+district: 瑶海区
+address: 胜利路元一时代广场F1
+coordinate_method: mall_centroid_approx
+coordinate_confidence: low
+source_group: web
+source_note: tripadvisor listing + later closure news
+notes: 历史门店，建议默认排除</description>
+<Point>
+<coordinates>117.31416,31.88051,0</coordinates>
+</Point>
+</Placemark>
+</Document></kml>

@@ -1,0 +1,1615 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>合肥地铁站</name>
+    <Style id="metroStation">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.0</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>丙子铺</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 丙子铺 (Bingzipu)</description>
+      <Point>
+        <coordinates>117.2919403,31.6933795,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>九联圩</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 九联圩 (Jiulianwei)</description>
+      <Point>
+        <coordinates>117.2807372,31.6933471,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>高王</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 高王 (Gaowang)</description>
+      <Point>
+        <coordinates>117.2858507,31.7749324,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>骆岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 骆岗 (Luogang)</description>
+      <Point>
+        <coordinates>117.2860048,31.7850886,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南站南广场</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南站南广场 (Hefei South Station South Square)</description>
+      <Point>
+        <coordinates>117.2859514,31.7945458,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>望湖城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 望湖城 (Wanghucheng)</description>
+      <Point>
+        <coordinates>117.2868337,31.8075499,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>葛大店</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 葛大店 (Gedadian)</description>
+      <Point>
+        <coordinates>117.2980393,31.816469,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>秋浦河路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 秋浦河路 (Qiupuhelu)</description>
+      <Point>
+        <coordinates>117.2966346,31.8253703,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合工大南区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合工大南区 (Hefei University of Technology South Campus)</description>
+      <Point>
+        <coordinates>117.2951521,31.8492551,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>包公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 包公园 (Baogongyuan)</description>
+      <Point>
+        <coordinates>117.2957533,31.858147,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>明光路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 明光路 (Mingguanglu)</description>
+      <Point>
+        <coordinates>117.2993577,31.8720592,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>长淮</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 长淮 (Changhuai)</description>
+      <Point>
+        <coordinates>117.3036709,31.8774087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>幸福坝</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 幸福坝 (Xingfuba)</description>
+      <Point>
+        <coordinates>117.1755126,31.7531885,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>安大磬苑校区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 安大磬苑校区 (Andaqingyuanxiaoqu)</description>
+      <Point>
+        <coordinates>117.1866826,31.7612566,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>工大翡翠湖校区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 工大翡翠湖校区 (Gongdafeicuihuxiaoqu)</description>
+      <Point>
+        <coordinates>117.1996609,31.7673985,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>大学城北</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 大学城北 (Daxuechengbei)</description>
+      <Point>
+        <coordinates>117.2042861,31.7770118,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>安医大二附院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 安医大二附院 (Anyida'erfuyuan)</description>
+      <Point>
+        <coordinates>117.2044083,31.7918037,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>繁华大道</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 繁华大道 (Fanhuadadao)</description>
+      <Point>
+        <coordinates>117.2032415,31.7843725,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>省博物馆</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 省博物馆 (Shengbowuyuan)</description>
+      <Point>
+        <coordinates>117.2098212,31.8029762,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合肥大剧院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合肥大剧院 (Hefeidajuyuan)</description>
+      <Point>
+        <coordinates>117.2184959,31.8163005,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>市政务中心</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 市政务中心 (Shizhengwuzhongxin)</description>
+      <Point>
+        <coordinates>117.2263983,31.8236772,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>洪岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 洪岗 (Honggang)</description>
+      <Point>
+        <coordinates>117.225981,31.8342389,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>国防科技大学</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 国防科技大学 (Guofangkejidaxue)</description>
+      <Point>
+        <coordinates>117.2257438,31.8428986,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>三十埠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 三十埠 (Sanshibu)</description>
+      <Point>
+        <coordinates>117.3915512,31.8708214,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>龙岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 龙岗 (Longgang)</description>
+      <Point>
+        <coordinates>117.370088,31.8702725,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>东二十埠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 东二十埠 (Dong'ershibu)</description>
+      <Point>
+        <coordinates>117.3614351,31.8701963,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>科学大道</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 科学大道 (Kexue Dadao)</description>
+      <Point>
+        <coordinates>117.2037764,31.8577257,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>张洼</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 张洼 (Zhangwa)</description>
+      <Point>
+        <coordinates>117.3165943,31.9199889,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>万年埠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 万年埠 (Wannianbu)</description>
+      <Point>
+        <coordinates>117.2965006,31.7005586,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>万达城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 万达城 (Wandacheng)</description>
+      <Point>
+        <coordinates>117.2965323,31.7077415,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>金斗公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 金斗公园 (Jindougongyuan)</description>
+      <Point>
+        <coordinates>117.297091,31.7248551,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>塘西河公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 塘西河公园 (Tangxihegongyuan)</description>
+      <Point>
+        <coordinates>117.2970614,31.7333322,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>紫庐</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 紫庐 (Zilu)</description>
+      <Point>
+        <coordinates>117.2977189,31.742819,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>滨湖会展中心</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 滨湖会展中心 (Binhu International Convention Center)</description>
+      <Point>
+        <coordinates>117.2971205,31.7565705,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合肥火车站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合肥火车站 (Hefei Railway Station)</description>
+      <Point>
+        <coordinates>117.3098017,31.8853159,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>兴华苑</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 兴华苑 (Xinghuayuan)</description>
+      <Point>
+        <coordinates>117.3081526,31.9054785,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>漕冲</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 漕冲 (Caochong)</description>
+      <Point>
+        <coordinates>117.3459358,31.8699608,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>东七里</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 东七里 (Dong Qili)</description>
+      <Point>
+        <coordinates>117.3325665,31.8697738,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>东五里井</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 东五里井 (Dong Wulijing)</description>
+      <Point>
+        <coordinates>117.3191706,31.8697286,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>三里街</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 三里街 (Sanlijie)</description>
+      <Point>
+        <coordinates>117.308313,31.8696153,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>四牌楼</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 四牌楼 (Sipailou)</description>
+      <Point>
+        <coordinates>117.2843552,31.8636352,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>三孝口</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 三孝口 (Sanxiaokou)</description>
+      <Point>
+        <coordinates>117.2698517,31.8631591,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>安农大</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 安农大 (Anhui Agriculture University)</description>
+      <Point>
+        <coordinates>117.2597638,31.860161,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>三里庵</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 三里庵 (Sanli'an)</description>
+      <Point>
+        <coordinates>117.2505061,31.8567465,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>五里墩</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 五里墩 (Wulidun)</description>
+      <Point>
+        <coordinates>117.2355608,31.8529118,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>西七里塘</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 西七里塘 (Xiqilitang)</description>
+      <Point>
+        <coordinates>117.2254075,31.8542739,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>十里庙</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 十里庙 (Shilimiao)</description>
+      <Point>
+        <coordinates>117.2177909,31.8566204,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>天柱路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 天柱路 (Tianzhu Lu)</description>
+      <Point>
+        <coordinates>117.19317,31.8560148,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>大蜀山</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 大蜀山 (Dashushan)</description>
+      <Point>
+        <coordinates>117.1804692,31.8537515,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>蜀山西</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 蜀山西 (Shushan Xi)</description>
+      <Point>
+        <coordinates>117.1629098,31.8533738,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>振兴路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 振兴路 (Zhenxing Lu)</description>
+      <Point>
+        <coordinates>117.1461537,31.8530748,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>汽车西站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 汽车西站 (Qiche Xizhan)</description>
+      <Point>
+        <coordinates>117.130752,31.8529383,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>桂庄</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 桂庄 (Guizhuang)</description>
+      <Point>
+        <coordinates>117.1213933,31.8526607,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南岗 (Nangang)</description>
+      <Point>
+        <coordinates>117.1101752,31.8525251,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>鸭林冲</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 鸭林冲 (Yalinchong)</description>
+      <Point>
+        <coordinates>117.3026053,31.8896149,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>淮南路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 淮南路 (Huainan Street)</description>
+      <Point>
+        <coordinates>117.2905388,31.8895334,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>文浍苑</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 文浍苑 (Wenhuiyuan)</description>
+      <Point>
+        <coordinates>117.3626572,31.9117711,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合肥西站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合肥西站 (Hefeixi Railway Station)</description>
+      <Point>
+        <coordinates>117.2307239,31.8738569,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南新庄</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南新庄 (Nanxinzhuang)</description>
+      <Point>
+        <coordinates>117.2251939,31.8637073,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>杏花村</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 杏花村 (Xinghuacun)</description>
+      <Point>
+        <coordinates>117.2406379,31.8830233,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>四泉桥</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 四泉桥 (Siquanqiao)</description>
+      <Point>
+        <coordinates>117.2513911,31.8886114,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>郑河</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 郑河 (Zhenghe)</description>
+      <Point>
+        <coordinates>117.2627214,31.8887712,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>海棠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 海棠 (Haitang)</description>
+      <Point>
+        <coordinates>117.2729012,31.8889595,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>一里井</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 一里井 (Yilijing)</description>
+      <Point>
+        <coordinates>117.2817269,31.8890468,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>窦桥湾</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 窦桥湾 (Douqiaowan)</description>
+      <Point>
+        <coordinates>117.3467532,31.8868868,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>新海大道</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 新海大道 (Xinhaidadao)</description>
+      <Point>
+        <coordinates>117.3535325,31.8921848,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>勤劳村</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 勤劳村 (Qinlaocun)</description>
+      <Point>
+        <coordinates>117.3555695,31.8989323,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>青龙岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 青龙岗 (Qinglonggang)</description>
+      <Point>
+        <coordinates>117.082736,31.8316487,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>玉兰大道</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 玉兰大道 (Yulandadao)</description>
+      <Point>
+        <coordinates>117.1702435,31.8226406,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>柳树塘</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 柳树塘 (Liushutang)</description>
+      <Point>
+        <coordinates>117.1928435,31.8136472,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>天鹅湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 天鹅湖 (Tian'ehu)</description>
+      <Point>
+        <coordinates>117.2221298,31.810273,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>姚公庙</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 姚公庙 (Yaogongmiao)</description>
+      <Point>
+        <coordinates>117.2437677,31.8106724,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南屏路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南屏路 (Nanpinglu)</description>
+      <Point>
+        <coordinates>117.2519739,31.8105222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>薛河</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 薛河 (Xuehe)</description>
+      <Point>
+        <coordinates>117.2634046,31.8097398,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>竹西</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 竹西 (Zhuxi)</description>
+      <Point>
+        <coordinates>117.2709978,31.8052222,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>五里庙</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 五里庙 (Wulimiao)</description>
+      <Point>
+        <coordinates>117.3184146,31.8392871,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>唐桥</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 唐桥 (Tangqiao)</description>
+      <Point>
+        <coordinates>117.3299935,31.8560589,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>站塘</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 站塘 (Zhantang)</description>
+      <Point>
+        <coordinates>117.3351855,31.8779157,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>新海公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 新海公园 (Xinhaigongyuan)</description>
+      <Point>
+        <coordinates>117.3370585,31.898603,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>十里村</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 十里村 (Shilicun)</description>
+      <Point>
+        <coordinates>117.3418144,31.906717,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>淝南</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 淝南 (Feinan)</description>
+      <Point>
+        <coordinates>117.2756057,31.8017155,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>天鹅湖东</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 天鹅湖东 (Tian'ehudong)</description>
+      <Point>
+        <coordinates>117.2331209,31.810681,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>金桂</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 金桂 (Jingui)</description>
+      <Point>
+        <coordinates>117.1822116,31.8181845,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合肥七中</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合肥七中 (Hefei No.7 High School)</description>
+      <Point>
+        <coordinates>117.0948261,31.8314255,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>瑶海公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 瑶海公园 (Yaohaigongyuan)</description>
+      <Point>
+        <coordinates>117.3088307,31.8921833,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>王岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 王岗 (Wanggang)</description>
+      <Point>
+        <coordinates>117.383849,31.8706214,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>大东门</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 大东门 (Dadongmen)</description>
+      <Point>
+        <coordinates>117.2951406,31.8658551,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>葛大店南</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 葛大店南 (Gedadiannan)</description>
+      <Point>
+        <coordinates>117.3076854,31.8108518,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>工经学院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 工经学院 (Gongjingxueyuan)</description>
+      <Point>
+        <coordinates>117.3202253,31.8169047,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>望湖城南</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 望湖城南 (Wanghuchengnan)</description>
+      <Point>
+        <coordinates>117.296715,31.8068261,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>图书馆</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 图书馆 (Tushuguan)</description>
+      <Point>
+        <coordinates>117.2100116,31.8110688,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>方庙</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 方庙 (Fangmiao)</description>
+      <Point>
+        <coordinates>117.3365368,31.8869729,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>竹丝滩</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 竹丝滩 (Zhusitan)</description>
+      <Point>
+        <coordinates>117.3255467,31.8872122,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>合肥南站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 合肥南站 (Hefeinan Railway Station)</description>
+      <Point>
+        <coordinates>117.2846034,31.8021792,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>李湾</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 李湾 (Liwan)</description>
+      <Point>
+        <coordinates>117.1507443,31.7204676,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>安医一附院南区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 安医一附院南区 (Anyi Yifuyuan Nanqu)</description>
+      <Point>
+        <coordinates>117.1631947,31.7440064,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>凉亭</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 凉亭 (Liangting)</description>
+      <Point>
+        <coordinates>117.1568727,31.7257854,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>四十埠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 四十埠</description>
+      <Point>
+        <coordinates>117.1518102,31.7112065,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>芮祠</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 芮祠 (Ruici)</description>
+      <Point>
+        <coordinates>117.1609256,31.7025987,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>乐平</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 乐平 (Leping)</description>
+      <Point>
+        <coordinates>117.170328,31.6964908,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>省儿童医院新区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 省儿童医院新区 (Sheng Ertong Yiyuan Xinqu)</description>
+      <Point>
+        <coordinates>117.1702878,31.6891968,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>综保区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 综保区 (Hefei Integrated Free Trade Zone)</description>
+      <Point>
+        <coordinates>117.3483073,31.9528009,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>安医一附院北区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 安医一附院北区 (First Affiliated Hospital of Anhui Medical University North District)</description>
+      <Point>
+        <coordinates>117.3432327,31.9389091,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>陶冲湖东</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 陶冲湖东 (Taochonghudong)</description>
+      <Point>
+        <coordinates>117.3395942,31.9284246,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>望湖城西</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 望湖城西 (Wanghuchengxi)</description>
+      <Point>
+        <coordinates>117.2830962,31.8110768,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>盛大</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 盛大 (Shengda)</description>
+      <Point>
+        <coordinates>117.296416,31.7945902,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>包河苑</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 包河苑 (Baoheyuan)</description>
+      <Point>
+        <coordinates>117.3117033,31.7957084,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>义兴</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 义兴 (Yixing)</description>
+      <Point>
+        <coordinates>117.3191491,31.7965325,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>大连路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 大连路 (Dalianlu)</description>
+      <Point>
+        <coordinates>117.326611,31.7875513,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>花园大道</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 花园大道 (Huayuandadao)</description>
+      <Point>
+        <coordinates>117.3285945,31.7753052,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>黄河路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 黄河路 (Huanghelu)</description>
+      <Point>
+        <coordinates>117.3286052,31.7677027,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>扬子江路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 扬子江路 (Yangzijianglu)</description>
+      <Point>
+        <coordinates>117.3331381,31.754764,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>义城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 义城 (Yicheng)</description>
+      <Point>
+        <coordinates>117.3330925,31.7427199,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>省政务中心东</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 省政务中心东 (Shengzhengwuzhongxindong)</description>
+      <Point>
+        <coordinates>117.333051,31.7332704,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>方兴湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 方兴湖 (Fangxinghu)</description>
+      <Point>
+        <coordinates>117.3330188,31.7201512,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>渡江纪念馆</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 渡江纪念馆 (Dujiangjinianguan)</description>
+      <Point>
+        <coordinates>117.3245712,31.715086,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>华山路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 华山路 (Huashanlu)</description>
+      <Point>
+        <coordinates>117.3055141,31.7151283,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>沈湾</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 沈湾 (Shenwan)</description>
+      <Point>
+        <coordinates>117.3139416,31.7151066,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>云谷路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 云谷路 (Yungulu)</description>
+      <Point>
+        <coordinates>117.2965428,31.715131,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>清水冲</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 清水冲 (Qingshuichong)</description>
+      <Point>
+        <coordinates>117.2806685,31.7151421,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>云川公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 云川公园 (Yunchuan Park)</description>
+      <Point>
+        <coordinates>117.2699735,31.7151579,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>滨湖竹园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 滨湖竹园 (Binhuzhuyuan)</description>
+      <Point>
+        <coordinates>117.2586089,31.7114136,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>贵阳路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 贵阳路 (Guiyanglu)</description>
+      <Point>
+        <coordinates>117.258566,31.7012466,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>相城路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 相城路 (Xiangchenglu)</description>
+      <Point>
+        <coordinates>117.4019577,31.9269652,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>职教城东</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 职教城东 (Zhijiaochengdong)</description>
+      <Point>
+        <coordinates>117.3915935,31.9269694,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>职教城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 职教城</description>
+      <Point>
+        <coordinates>117.3775569,31.9270103,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>幼儿师范</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 幼儿师范</description>
+      <Point>
+        <coordinates>117.3667851,31.9232239,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>尧渡河路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 尧渡河路 (Yaoduhelu)</description>
+      <Point>
+        <coordinates>117.318623,31.8271612,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>北雁湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 北雁湖 (Beiyanhu)</description>
+      <Point>
+        <coordinates>117.1521809,31.8228455,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>量子科学中心</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 量子科学中心 (QISRC)</description>
+      <Point>
+        <coordinates>117.1097124,31.8319844,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>科大先研院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 科大先研院 (IAT-USTC)</description>
+      <Point>
+        <coordinates>117.1286128,31.8321462,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>复兴集</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 复兴集</description>
+      <Point>
+        <coordinates>117.1394791,31.8177748,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>桃花潭</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 桃花潭</description>
+      <Point>
+        <coordinates>117.1322072,31.7843742,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>长安集</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 长安集</description>
+      <Point>
+        <coordinates>117.1396503,31.8047413,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>金小郢</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 金小郢</description>
+      <Point>
+        <coordinates>117.1112101,31.784333,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>铜锣寨路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 铜锣寨路 (Tongluozhai Road)</description>
+      <Point>
+        <coordinates>117.0869302,31.7677959,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>魏庄</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 魏庄 (Weizhuang)</description>
+      <Point>
+        <coordinates>117.0892226,31.7614573,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>烧脉岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 烧脉岗 (Shaomaigang)</description>
+      <Point>
+        <coordinates>117.0964298,31.7571678,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>馆驿</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 馆驿</description>
+      <Point>
+        <coordinates>117.1532759,31.6808671,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>T1航站楼</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: T1航站楼</description>
+      <Point>
+        <coordinates>116.9632589,31.98794,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>紫云湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 紫云湖 (Ziyun Lake)</description>
+      <Point>
+        <coordinates>117.1097065,31.7571604,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>三十埠东</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 三十埠东 (Sanshibudong)</description>
+      <Point>
+        <coordinates>117.4141246,31.8737887,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>祥和</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 祥和 (Xianghe)</description>
+      <Point>
+        <coordinates>117.4239241,31.8758821,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>桂王</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 桂王 (Guiwang)</description>
+      <Point>
+        <coordinates>117.4370484,31.8757631,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>对河</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 对河 (Duihe)</description>
+      <Point>
+        <coordinates>117.4496656,31.8744432,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>店埠河</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 店埠河 (Dianbuhe)</description>
+      <Point>
+        <coordinates>117.4661978,31.8770697,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>排头</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 排头 (Paitou)</description>
+      <Point>
+        <coordinates>117.4751401,31.872964,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>肥东站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 肥东站 (Feidong Railway Station)</description>
+      <Point>
+        <coordinates>117.4803524,31.8613637,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>和睦湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 和睦湖 (Hemuhu)</description>
+      <Point>
+        <coordinates>117.4866259,31.8538961,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>马桥</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 马桥 (Maqiao)</description>
+      <Point>
+        <coordinates>117.4865926,31.8466877,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南沙河</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南沙河 (Nanshahe)</description>
+      <Point>
+        <coordinates>117.486529,31.835705,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>撮镇</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 撮镇 (Cuozhen)</description>
+      <Point>
+        <coordinates>117.4864574,31.8243964,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>龙塘</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 龙塘 (Longtang)</description>
+      <Point>
+        <coordinates>117.4114432,31.8384086,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>伏龙</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 伏龙 (Fulong)</description>
+      <Point>
+        <coordinates>117.3928688,31.8396449,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>大兴集</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 大兴集 (Daxingji)</description>
+      <Point>
+        <coordinates>117.3798469,31.8376999,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>钢红</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 钢红 (Ganghong)</description>
+      <Point>
+        <coordinates>117.3724327,31.8299052,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>市博物馆</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 市博物馆</description>
+      <Point>
+        <coordinates>117.3607658,31.833375,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>市儿童医院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 市儿童医院</description>
+      <Point>
+        <coordinates>117.3498802,31.8376791,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>唐大楼</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 唐大楼</description>
+      <Point>
+        <coordinates>117.3295549,31.8301289,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>卫岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 卫岗 (Weigang)</description>
+      <Point>
+        <coordinates>117.2798519,31.8324843,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>市第三医院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 市第三医院 (Hefei No.3 People's Hospital)</description>
+      <Point>
+        <coordinates>117.2652005,31.8306564,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>南七里</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 南七里 (Nanqili)</description>
+      <Point>
+        <coordinates>117.2524082,31.8320412,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>炮兵学院</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 炮兵学院 (Lujun Bingzhong Daxue)</description>
+      <Point>
+        <coordinates>117.2407171,31.8326929,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>松荫桥</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 松荫桥 (Songyinqiao)</description>
+      <Point>
+        <coordinates>117.2166789,31.8354729,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>梦城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 梦城 (Mengcheng)</description>
+      <Point>
+        <coordinates>117.1973587,31.8346877,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>开福寺</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 开福寺 (Kaifusi)</description>
+      <Point>
+        <coordinates>117.1793492,31.8336857,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>凌大塘</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 凌大塘 (Lingdatang)</description>
+      <Point>
+        <coordinates>117.2712511,31.8161673,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>休宁路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 休宁路</description>
+      <Point>
+        <coordinates>117.2634461,31.8204665,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>中国科大东区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 中国科大东区</description>
+      <Point>
+        <coordinates>117.2675397,31.8438331,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>稻香楼</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 稻香楼 (Daoxianglou)</description>
+      <Point>
+        <coordinates>117.2684299,31.851382,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>杏花公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 杏花公园 (Xinghua Park)</description>
+      <Point>
+        <coordinates>117.2730653,31.8730505,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>白水坝</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 白水坝 (Baishuiba)</description>
+      <Point>
+        <coordinates>117.2729431,31.881566,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>北五里井</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 北五里井 (Beiwulijing)</description>
+      <Point>
+        <coordinates>117.2700751,31.899516,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>菱湖公园</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 菱湖公园 (Linghu Park)</description>
+      <Point>
+        <coordinates>117.2661599,31.9189745,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>六中菱湖校区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 六中菱湖校区 (Hefei No. 6 High School Linghu Campus)</description>
+      <Point>
+        <coordinates>117.2645732,31.9319216,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>汲桥路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 汲桥路 (Jiqiao Road)</description>
+      <Point>
+        <coordinates>117.258289,31.9429963,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>杏林</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 杏林</description>
+      <Point>
+        <coordinates>117.2785101,31.9054197,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>庐阳经开区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 庐阳经开区</description>
+      <Point>
+        <coordinates>117.274557,31.9251966,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>荷塘路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 荷塘路</description>
+      <Point>
+        <coordinates>117.2543029,31.9381071,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>双凤</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 双凤</description>
+      <Point>
+        <coordinates>117.2515035,31.9585573,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>金梅路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 金梅路</description>
+      <Point>
+        <coordinates>117.2493729,31.9778419,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>梅冲湖</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 梅冲湖</description>
+      <Point>
+        <coordinates>117.2484686,31.9967962,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>北城世纪城</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 北城世纪城</description>
+      <Point>
+        <coordinates>117.2424736,32.0130302,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>双墩</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 双墩</description>
+      <Point>
+        <coordinates>117.2431083,32.031539,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>省立医院北区</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 省立医院北区</description>
+      <Point>
+        <coordinates>117.2406001,32.0465591,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>北城高铁站</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 北城高铁站</description>
+      <Point>
+        <coordinates>117.2508258,32.0647806,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>松林路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 松林路</description>
+      <Point>
+        <coordinates>117.1908483,31.7844265,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>松谷路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 松谷路</description>
+      <Point>
+        <coordinates>117.2157493,31.7828758,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>莲花路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 莲花路</description>
+      <Point>
+        <coordinates>117.2258393,31.7783633,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>天都路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 天都路</description>
+      <Point>
+        <coordinates>117.2336335,31.7783,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>石门路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 石门路</description>
+      <Point>
+        <coordinates>117.2446921,31.7728164,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>耕耘路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 耕耘路</description>
+      <Point>
+        <coordinates>117.2446615,31.7618224,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>清潭路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 清潭路</description>
+      <Point>
+        <coordinates>117.2542327,31.7553479,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>习友路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 习友路</description>
+      <Point>
+        <coordinates>117.2647773,31.7580461,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>要素大市场</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 要素大市场</description>
+      <Point>
+        <coordinates>117.2805106,31.7520769,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>广西路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 广西路</description>
+      <Point>
+        <coordinates>117.2858506,31.7426345,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>嵩山路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 嵩山路</description>
+      <Point>
+        <coordinates>117.3095102,31.7428612,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>徽富路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 徽富路</description>
+      <Point>
+        <coordinates>117.3187228,31.7427059,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>天津路</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 天津路</description>
+      <Point>
+        <coordinates>117.3433235,31.7427719,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>朱岗</name>
+      <styleUrl>#metroStation</styleUrl>
+      <description>地铁站: 朱岗 (Zhugang)</description>
+      <Point>
+        <coordinates>117.2962536,31.8341046,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

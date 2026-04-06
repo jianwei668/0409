@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>合肥烘焙竞争门店_新增活跃点</name>
+<Placemark>
+<name>鲍师傅糕点(合肥淮河路店)</name>
+<description>id: BK001
+brand: 鲍师傅糕点
+store_name: 鲍师傅糕点(合肥淮河路店)
+status: active_recent_web
+district: 庐阳区
+address: 合肥市庐阳区淮河路1号步行街东头(梦之城对面)
+coordinate_method: static_map_center
+coordinate_confidence: high
+phone: 17775335880
+source_group: web
+source_note: city8 page + static map center
+notes: 强连锁烘焙/糕点竞争点</description>
+<Point>
+<coordinates>117.30504,31.86979,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>仟吉西饼(万振逍遥苑店)</name>
+<description>id: BK002
+brand: 仟吉西饼
+store_name: 仟吉西饼(万振逍遥苑店)
+status: active_recent_web
+district: 包河区
+address: 太湖东路万振逍遥苑一期2幢101门面
+coordinate_method: static_map_center
+coordinate_confidence: high
+source_group: web
+source_note: city8 page + static map center
+notes: 连锁烘焙竞争点</description>
+<Point>
+<coordinates>117.31090,31.83802,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>面包好了(常青藤街店)</name>
+<description>id: BK010
+brand: 面包好了
+store_name: 面包好了(常青藤街店)
+status: active_recent_web
+district: 庐阳区
+address: 合肥市庐阳区常青藤街四季华庭b栋103号
+coordinate_method: static_map_center
+coordinate_confidence: high
+source_group: web
+source_note: city8 page + static map center
+notes: 社区型烘焙竞争点</description>
+<Point>
+<coordinates>117.24716,31.89687,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店)</name>
+<description>id: BK011
+brand: HOT CRUSH
+store_name: HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店)
+status: active_recent_web
+district: 蜀山区/政务区
+address: 潜山路111号合肥万象城B1层B165A
+coordinate_method: mall_centroid_approx
+coordinate_confidence: medium
+source_group: web
+source_note: mall store listing + mall centroid
+notes: 坐标为万象城B1近似中心点</description>
+<Point>
+<coordinates>117.23845,31.80630,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Eyeable(合肥华润万象城店)</name>
+<description>id: BK012
+brand: Eyeable
+store_name: Eyeable(合肥华润万象城店)
+status: active_recent_web
+district: 蜀山区/政务区
+address: 潜山路111号合肥华润万象城F2
+coordinate_method: mall_centroid_approx
+coordinate_confidence: medium
+phone: 0551-65990896
+source_group: web
+source_note: directory result + mall centroid
+notes: 坐标为万象城近似中心点</description>
+<Point>
+<coordinates>117.23840,31.80537,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Le Monde蕾茉法式甜点(1912街区店)</name>
+<description>id: BK013
+brand: Le Monde蕾茉
+store_name: Le Monde蕾茉法式甜点(1912街区店)
+status: active_recent_web
+district: 蜀山区
+address: 黄山路与怀宁路交口金大地1912西街6号楼
+coordinate_method: block_centroid_approx
+coordinate_confidence: medium
+source_group: web
+source_note: directory/listing + 1912 block centroid
+notes: 坐标为1912街区近似中心点</description>
+<Point>
+<coordinates>117.22617,31.84745,0</coordinates>
+</Point>
+</Placemark>
+</Document></kml>

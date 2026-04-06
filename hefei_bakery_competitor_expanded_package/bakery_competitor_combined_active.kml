@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>合肥烘焙竞争门店_合并活跃点</name>
+<Placemark>
+<name>詹记宫廷桃酥</name>
+<description>id: ZJ001
+brand: 詹记/宫廷桃酥类
+store_name: 詹记宫廷桃酥
+status: active_assumed
+address: 长虹世纪荣廷11栋103号门面
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15005526854
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.338941, 31.906122</description>
+<Point>
+<coordinates>117.33328533163734,31.908031781503574,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>利勇宫廷桃酥王</name>
+<description>id: ZJ002
+brand: 詹记/宫廷桃酥类
+store_name: 利勇宫廷桃酥王
+status: active_assumed
+address: 新海大道紫燕百味鸡旁(新海公园地铁站C口步行450米)
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18956052913
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.339275, 31.895106</description>
+<Point>
+<coordinates>117.33361955324116,31.89701275291241,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫庭桃酥王</name>
+<description>id: ZJ003
+brand: 詹记/宫廷桃酥类
+store_name: 宫庭桃酥王
+status: active_assumed
+address: 宫廷桃酥王永辉超市一层南门3号店铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.309395, 31.885208</description>
+<Point>
+<coordinates>117.30381564456562,31.887168814803733,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫廷桃酥</name>
+<description>id: ZJ004
+brand: 詹记/宫廷桃酥类
+store_name: 宫廷桃酥
+status: active_assumed
+address: 张衡路800号银城旭辉樾溪臺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.369397, 31.924852</description>
+<Point>
+<coordinates>117.36367337279363,31.926716567369535,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫廷桃酥王 现烤糕点(云河湾店)</name>
+<description>id: ZJ005
+brand: 詹记/宫廷桃酥类
+store_name: 宫廷桃酥王 现烤糕点(云河湾店)
+status: active_assumed
+address: 云河湾s-106卡旺卡旁
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.366412, 31.883239</description>
+<Point>
+<coordinates>117.36069769819703,31.885098350354564,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫廷桃酥王(五十五中店)</name>
+<description>id: ZJ006
+brand: 詹记/宫廷桃酥类
+store_name: 宫廷桃酥王(五十五中店)
+status: active_assumed
+address: 琥珀名城沁园门面47栋
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.379494, 31.871939</description>
+<Point>
+<coordinates>117.37375998580588,31.87378097143302,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫廷桃酥王(五里井店)</name>
+<description>id: ZJ007
+brand: 詹记/宫廷桃酥类
+store_name: 宫廷桃酥王(五里井店)
+status: active_assumed
+address: 合肥市第三十八中学南陵路分校西门南130米
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 17826193532
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.326171, 31.865624</description>
+<Point>
+<coordinates>117.3205514836462,31.86754945231537,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>宫廷桃酥王(琅琊山路店)</name>
+<description>id: ZJ008
+brand: 詹记/宫廷桃酥类
+store_name: 宫廷桃酥王(琅琊山路店)
+status: active_assumed
+address: 三里街街道戴安桥路18号大富新村
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 13063482702
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.31039, 31.869743</description>
+<Point>
+<coordinates>117.30480969332248,31.871698795995197,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>江鹰彭氏宫廷桃酥王(三分店)</name>
+<description>id: ZJ009
+brand: 詹记/宫廷桃酥类
+store_name: 江鹰彭氏宫廷桃酥王(三分店)
+status: active_assumed
+address: 龙岗长江东路29号(第一人民医院集团肥东县第二人民医院附近)
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 13605609924
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.362754, 31.867864</description>
+<Point>
+<coordinates>117.35704812003283,31.86972526798985,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥</name>
+<description>id: ZJ010
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥
+status: active_assumed
+address: 广德路与临泉路交叉口北140米
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.363875, 31.876825</description>
+<Point>
+<coordinates>117.35816608494012,31.878686516419673,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(临泉路店)</name>
+<description>id: ZJ011
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(临泉路店)
+status: active_assumed
+address: 方庙街道临泉路香江世纪名城4幢107号
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18655460291
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.334063, 31.875662</description>
+<Point>
+<coordinates>117.32842245810619,31.877574442170626,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(保利东郡店)</name>
+<description>id: ZJ012
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(保利东郡店)
+status: active_assumed
+address: 新安江路与郎溪路交口保利广场内层铺号1004A
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18855175539
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.359132, 31.858893</description>
+<Point>
+<coordinates>117.35343427894794,31.860757864877527,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(元一店)</name>
+<description>id: ZJ013
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(元一店)
+status: active_assumed
+address: 胜利路82号
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15826861305
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.308384, 31.875306</description>
+<Point>
+<coordinates>117.30280801400217,31.87726651981499,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(和平路店)</name>
+<description>id: ZJ014
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(和平路店)
+status: active_assumed
+address: 和平路2号华源国际城商业街一区A104号
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15209878576
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.332587, 31.854299</description>
+<Point>
+<coordinates>117.32695222353142,31.85620989510269,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(坝上吾悦店)</name>
+<description>id: ZJ015
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(坝上吾悦店)
+status: active_assumed
+address: 明光路街道芜湖路2号坝上吾悦广场一层1025号商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 17858951017
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.306975, 31.860475</description>
+<Point>
+<coordinates>117.30140377769628,31.862434945564328,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(大兴新居店)</name>
+<description>id: ZJ016
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(大兴新居店)
+status: active_assumed
+address: 顺安河路和张集路交口拐角大兴新居邻里中心PS-1F-02号商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18756010800
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.375187, 31.839279</description>
+<Point>
+<coordinates>117.36946221514462,31.841118783338167,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(宝业店)</name>
+<description>id: ZJ017
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(宝业店)
+status: active_assumed
+address: 长江东路504号宝业奥莱1F层
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15956964205
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.337526, 31.870727</description>
+<Point>
+<coordinates>117.3318772267662,31.872631867171332,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(家天下店)</name>
+<description>id: ZJ018
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(家天下店)
+status: active_assumed
+address: 铜陵北路与扶疏路交口家天下生活广场一层F118-2商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15056960282
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.326578, 31.895016</description>
+<Point>
+<coordinates>117.32095465613604,31.89694686485977,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(恒通联家店)</name>
+<description>id: ZJ019
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(恒通联家店)
+status: active_assumed
+address: 长江东路180号恒通食品批发市场9-20幢综合楼1-101
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 13661727313
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.356825, 31.868475</description>
+<Point>
+<coordinates>117.3511312130526,31.870345430196625,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(新站广场店)</name>
+<description>id: ZJ020
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(新站广场店)
+status: active_assumed
+address: 新蚌埠路新站广场一楼1017-1020号商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 13832728921
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.329712, 31.938936</description>
+<Point>
+<coordinates>117.32407648483748,31.940870657306625,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(新站弘盛广场店)</name>
+<description>id: ZJ021
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(新站弘盛广场店)
+status: active_assumed
+address: 铜陵北路与淮海大道交口弘盛商业广场C区一层109号商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18297980058
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.348112, 31.933169</description>
+<Point>
+<coordinates>117.34243156961632,31.93506815658005,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(武里山天街店)</name>
+<description>id: ZJ022
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(武里山天街店)
+status: active_assumed
+address: 武里山路与扶疏路交口天街商业中心2号楼114,115商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18326033840
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.320303, 31.898444</description>
+<Point>
+<coordinates>117.31469530384568,31.900387563053815,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(淮合花园店)</name>
+<description>id: ZJ023
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(淮合花园店)
+status: active_assumed
+address: 万罗山路与沱河路交口淮合花园润宜佳购物中心一楼大门口F1-27号
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 13738802835
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.306584, 31.922155</description>
+<Point>
+<coordinates>117.30100788389505,31.924128855240102,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(瑶海万达店)</name>
+<description>id: ZJ024
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(瑶海万达店)
+status: active_assumed
+address: 临泉路瑶海万达广场7-3步行街123、123上号(商场南侧金街口)
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18056488069
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.350368, 31.876071</description>
+<Point>
+<coordinates>117.34468780136052,31.87795372136908,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(禹悦里店)</name>
+<description>id: ZJ025
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(禹悦里店)
+status: active_assumed
+address: 新蚌埠路禹州禹悦里140B商铺
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15755131931;19156452034
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.313727, 31.901619</description>
+<Point>
+<coordinates>117.30813549225805,31.903575523023818,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(铜陵路永辉店)(暂停营业)</name>
+<description>id: ZJ026
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(铜陵路永辉店)(暂停营业)
+status: active_assumed
+address: 铜陵路与滨河路交叉口左岸广场F层D
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 15156090882
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.316073, 31.848168</description>
+<Point>
+<coordinates>117.31048071006983,31.850109068957458,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记桃酥(龙湖天街店)</name>
+<description>id: ZJ027
+brand: 詹记/宫廷桃酥类
+store_name: 詹记桃酥(龙湖天街店)
+status: active_assumed
+address: 长江东路与王岗路交汇处东南角龙湖天街A-1F-11
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18705694175
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.391165, 31.868019</description>
+<Point>
+<coordinates>117.38541903042031,31.869851904157407,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记食品集合报道中心</name>
+<description>id: ZJ028
+brand: 詹记/宫廷桃酥类
+store_name: 詹记食品集合报道中心
+status: active_assumed
+address: 新海大道与文忠路交叉口东100米
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: []
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.360175, 31.890725</description>
+<Point>
+<coordinates>117.3544720873603,31.892594901059407,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>詹记鱼羊馆(东湖山庄·碧云阁店)</name>
+<description>id: ZJ029
+brand: 詹记/宫廷桃酥类
+store_name: 詹记鱼羊馆(东湖山庄·碧云阁店)
+status: active_assumed
+address: 武里山路东湖山庄碧云阁15栋
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 0551-64276729;13805608829
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.318204, 31.893885</description>
+<Point>
+<coordinates>117.31260203842527,31.89583152921542,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>酥芝冠宫廷桃酥(糕点)</name>
+<description>id: ZJ030
+brand: 詹记/宫廷桃酥类
+store_name: 酥芝冠宫廷桃酥(糕点)
+status: active_assumed
+address: 恒丰嘉园(东五里井地铁站D口步行270米)
+coordinate_method: existing_project_kml
+coordinate_confidence: high
+phone: 18226653791
+source_group: existing_project
+source_note: from zhanji_all.kml in uploaded project
+notes: 117.323775, 31.868916</description>
+<Point>
+<coordinates>117.31816128003419,31.870846705938103,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>鲍师傅糕点(合肥淮河路店)</name>
+<description>id: BK001
+brand: 鲍师傅糕点
+store_name: 鲍师傅糕点(合肥淮河路店)
+status: active_recent_web
+district: 庐阳区
+address: 合肥市庐阳区淮河路1号步行街东头(梦之城对面)
+coordinate_method: static_map_center
+coordinate_confidence: high
+phone: 17775335880
+source_group: web
+source_note: city8 page + static map center
+notes: 强连锁烘焙/糕点竞争点</description>
+<Point>
+<coordinates>117.30504,31.86979,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>仟吉西饼(万振逍遥苑店)</name>
+<description>id: BK002
+brand: 仟吉西饼
+store_name: 仟吉西饼(万振逍遥苑店)
+status: active_recent_web
+district: 包河区
+address: 太湖东路万振逍遥苑一期2幢101门面
+coordinate_method: static_map_center
+coordinate_confidence: high
+source_group: web
+source_note: city8 page + static map center
+notes: 连锁烘焙竞争点</description>
+<Point>
+<coordinates>117.31090,31.83802,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>面包好了(常青藤街店)</name>
+<description>id: BK010
+brand: 面包好了
+store_name: 面包好了(常青藤街店)
+status: active_recent_web
+district: 庐阳区
+address: 合肥市庐阳区常青藤街四季华庭b栋103号
+coordinate_method: static_map_center
+coordinate_confidence: high
+source_group: web
+source_note: city8 page + static map center
+notes: 社区型烘焙竞争点</description>
+<Point>
+<coordinates>117.24716,31.89687,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店)</name>
+<description>id: BK011
+brand: HOT CRUSH
+store_name: HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店)
+status: active_recent_web
+district: 蜀山区/政务区
+address: 潜山路111号合肥万象城B1层B165A
+coordinate_method: mall_centroid_approx
+coordinate_confidence: medium
+source_group: web
+source_note: mall store listing + mall centroid
+notes: 坐标为万象城B1近似中心点</description>
+<Point>
+<coordinates>117.23845,31.80630,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Eyeable(合肥华润万象城店)</name>
+<description>id: BK012
+brand: Eyeable
+store_name: Eyeable(合肥华润万象城店)
+status: active_recent_web
+district: 蜀山区/政务区
+address: 潜山路111号合肥华润万象城F2
+coordinate_method: mall_centroid_approx
+coordinate_confidence: medium
+phone: 0551-65990896
+source_group: web
+source_note: directory result + mall centroid
+notes: 坐标为万象城近似中心点</description>
+<Point>
+<coordinates>117.23840,31.80537,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Le Monde蕾茉法式甜点(1912街区店)</name>
+<description>id: BK013
+brand: Le Monde蕾茉
+store_name: Le Monde蕾茉法式甜点(1912街区店)
+status: active_recent_web
+district: 蜀山区
+address: 黄山路与怀宁路交口金大地1912西街6号楼
+coordinate_method: block_centroid_approx
+coordinate_confidence: medium
+source_group: web
+source_note: directory/listing + 1912 block centroid
+notes: 坐标为1912街区近似中心点</description>
+<Point>
+<coordinates>117.22617,31.84745,0</coordinates>
+</Point>
+</Placemark>
+</Document></kml>

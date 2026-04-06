@@ -1,0 +1,19 @@
+﻿id,brand,store_name,status,district,address,longitude_wgs84,latitude_wgs84,coordinate_method,coordinate_confidence,phone,source_group,source_note,notes
+BK001,鲍师傅糕点,鲍师傅糕点(合肥淮河路店),active_recent_web,庐阳区,合肥市庐阳区淮河路1号步行街东头(梦之城对面),117.30504,31.86979,static_map_center,high,17775335880,web,city8 page + static map center,强连锁烘焙/糕点竞争点
+BK002,仟吉西饼,仟吉西饼(万振逍遥苑店),active_recent_web,包河区,太湖东路万振逍遥苑一期2幢101门面,117.31090,31.83802,static_map_center,high,,web,city8 page + static map center,连锁烘焙竞争点
+BK003,甜嘟嘟,甜嘟嘟烘焙坊(舒城路店),active_recent_web,庐阳区/蜀山区边缘,舒城路2号正欣蔬菜超市1号门面房,,,address_only,medium,19966153386,web,directory + media mention,本地热门烘焙，待补坐标
+BK004,Noah'sBakery,Noah'sBakery诺亚德式面包房&咖啡,active_recent_web,蜀山区,欧风北街欧洲风情街C区03-2商铺,,,address_only,medium,,web,media opening report + directory,2023年新开，待补坐标
+BK005,超港,超港连锁烘焙坊(万达店),active_recent_web,包河区,合肥市包河区马鞍山路130号万达广场室外步行街入口南侧,,,address_only,medium,055162860033,web,directory result,待补坐标，可用包河万达中心点近似
+BK006,超港,超港(合肥商之都店),active_recent_web,庐阳区,合肥市庐阳区宿州路8号商之都中心广场F1,,,address_only,medium,18856926589,web,directory result,待补坐标，可用商之都中心点近似
+BK007,蓝塔烘焙,LanTa蓝塔烘焙(中环城店),active_recent_web,经开区,合肥市经济技术开发区繁华大道以南翡翠路以西中环购物中心内一层5号,,,address_only,medium,0551-62113278,web,directory result + boss/company,待补坐标，可用中环购物中心中心点近似
+BK008,蓝塔烘焙,LanTa蓝塔烘焙(宿州路店),active_recent_web,庐阳区,宿州路与红星路交汇处东北角(商之都北侧),,,address_only,medium,,web,directory result,待补坐标
+BK009,蓝塔烘焙,LanTa蓝塔烘焙(瑶海万达店),active_recent_web,瑶海区,临泉东路与和县路交口万达广场金街一楼,,,address_only,medium,0551-65717818,web,directory result,待补坐标
+BK010,面包好了,面包好了(常青藤街店),active_recent_web,庐阳区,合肥市庐阳区常青藤街四季华庭b栋103号,117.24716,31.89687,static_map_center,high,,web,city8 page + static map center,社区型烘焙竞争点
+BK011,HOT CRUSH,HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店),active_recent_web,蜀山区/政务区,潜山路111号合肥万象城B1层B165A,117.23845,31.80630,mall_centroid_approx,medium,,web,mall store listing + mall centroid,坐标为万象城B1近似中心点
+BK012,Eyeable,Eyeable(合肥华润万象城店),active_recent_web,蜀山区/政务区,潜山路111号合肥华润万象城F2,117.23840,31.80537,mall_centroid_approx,medium,0551-65990896,web,directory result + mall centroid,坐标为万象城近似中心点
+BK013,Le Monde蕾茉,Le Monde蕾茉法式甜点(1912街区店),active_recent_web,蜀山区,黄山路与怀宁路交口金大地1912西街6号楼,117.22617,31.84745,block_centroid_approx,medium,,web,directory/listing + 1912 block centroid,坐标为1912街区近似中心点
+BK014,味爱烘焙,味爱烘焙店,active_recent_web,庐阳区,合肥市庐阳区肥西路1199号云滨花园1幢商107,,,address_only,medium,,web,boss/company,独立烘焙店，待补坐标
+BK015,有千层蛋糕,有千层蛋糕店,active_recent_web,蜀山区/政务区,潜山路588号天珑广场11幢1层11-商101,,,address_only,medium,,web,boss/company,千层甜品竞争点，待补坐标
+BK016,中领尚信,中领尚信烘焙店,active_recent_web,包河区,合肥市包河区马鞍山路130号商铺B1F62,,,address_only,medium,,web,boss/company,包河万达负一楼烘焙点，待补坐标
+BK017,采蝶轩,采蝶轩(中环购物中心店),active_recent_web,经开区,合肥市经济技术开发区繁华大道12167号中环购物中心一楼79、80号,,,address_only,medium,,web,boss/company,大型本地烘焙连锁分店，待补坐标
+BK018,采蝶轩,采蝶轩(圣地雅阁/蓝岸雅居店),active_recent_web,瑶海区,合肥市瑶海区和平路与明光路交口蓝岸雅居4幢商103室,,,address_only,medium,,web,boss/company,大型本地烘焙连锁分店，待补坐标

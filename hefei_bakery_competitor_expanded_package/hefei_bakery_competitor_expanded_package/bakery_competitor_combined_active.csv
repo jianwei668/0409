@@ -1,0 +1,49 @@
+﻿id,brand,store_name,status,district,address,longitude_wgs84,latitude_wgs84,coordinate_method,coordinate_confidence,phone,source_group,source_note,notes
+ZJ001,詹记/宫廷桃酥类,詹记宫廷桃酥,active_assumed,,长虹世纪荣廷11栋103号门面,117.33328533163734,31.908031781503574,existing_project_kml,high,15005526854,existing_project,from zhanji_all.kml in uploaded project,"117.338941, 31.906122"
+ZJ002,詹记/宫廷桃酥类,利勇宫廷桃酥王,active_assumed,,新海大道紫燕百味鸡旁(新海公园地铁站C口步行450米),117.33361955324116,31.89701275291241,existing_project_kml,high,18956052913,existing_project,from zhanji_all.kml in uploaded project,"117.339275, 31.895106"
+ZJ003,詹记/宫廷桃酥类,宫庭桃酥王,active_assumed,,宫廷桃酥王永辉超市一层南门3号店铺,117.30381564456562,31.887168814803733,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.309395, 31.885208"
+ZJ004,詹记/宫廷桃酥类,宫廷桃酥,active_assumed,,张衡路800号银城旭辉樾溪臺,117.36367337279363,31.926716567369535,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.369397, 31.924852"
+ZJ005,詹记/宫廷桃酥类,宫廷桃酥王 现烤糕点(云河湾店),active_assumed,,云河湾s-106卡旺卡旁,117.36069769819703,31.885098350354564,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.366412, 31.883239"
+ZJ006,詹记/宫廷桃酥类,宫廷桃酥王(五十五中店),active_assumed,,琥珀名城沁园门面47栋,117.37375998580588,31.87378097143302,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.379494, 31.871939"
+ZJ007,詹记/宫廷桃酥类,宫廷桃酥王(五里井店),active_assumed,,合肥市第三十八中学南陵路分校西门南130米,117.3205514836462,31.86754945231537,existing_project_kml,high,17826193532,existing_project,from zhanji_all.kml in uploaded project,"117.326171, 31.865624"
+ZJ008,詹记/宫廷桃酥类,宫廷桃酥王(琅琊山路店),active_assumed,,三里街街道戴安桥路18号大富新村,117.30480969332248,31.871698795995197,existing_project_kml,high,13063482702,existing_project,from zhanji_all.kml in uploaded project,"117.31039, 31.869743"
+ZJ009,詹记/宫廷桃酥类,江鹰彭氏宫廷桃酥王(三分店),active_assumed,,龙岗长江东路29号(第一人民医院集团肥东县第二人民医院附近),117.35704812003283,31.86972526798985,existing_project_kml,high,13605609924,existing_project,from zhanji_all.kml in uploaded project,"117.362754, 31.867864"
+ZJ010,詹记/宫廷桃酥类,詹记桃酥,active_assumed,,广德路与临泉路交叉口北140米,117.35816608494012,31.878686516419673,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.363875, 31.876825"
+ZJ011,詹记/宫廷桃酥类,詹记桃酥(临泉路店),active_assumed,,方庙街道临泉路香江世纪名城4幢107号,117.32842245810619,31.877574442170626,existing_project_kml,high,18655460291,existing_project,from zhanji_all.kml in uploaded project,"117.334063, 31.875662"
+ZJ012,詹记/宫廷桃酥类,詹记桃酥(保利东郡店),active_assumed,,新安江路与郎溪路交口保利广场内层铺号1004A,117.35343427894794,31.860757864877527,existing_project_kml,high,18855175539,existing_project,from zhanji_all.kml in uploaded project,"117.359132, 31.858893"
+ZJ013,詹记/宫廷桃酥类,詹记桃酥(元一店),active_assumed,,胜利路82号,117.30280801400217,31.87726651981499,existing_project_kml,high,15826861305,existing_project,from zhanji_all.kml in uploaded project,"117.308384, 31.875306"
+ZJ014,詹记/宫廷桃酥类,詹记桃酥(和平路店),active_assumed,,和平路2号华源国际城商业街一区A104号,117.32695222353142,31.85620989510269,existing_project_kml,high,15209878576,existing_project,from zhanji_all.kml in uploaded project,"117.332587, 31.854299"
+ZJ015,詹记/宫廷桃酥类,詹记桃酥(坝上吾悦店),active_assumed,,明光路街道芜湖路2号坝上吾悦广场一层1025号商铺,117.30140377769628,31.862434945564328,existing_project_kml,high,17858951017,existing_project,from zhanji_all.kml in uploaded project,"117.306975, 31.860475"
+ZJ016,詹记/宫廷桃酥类,詹记桃酥(大兴新居店),active_assumed,,顺安河路和张集路交口拐角大兴新居邻里中心PS-1F-02号商铺,117.36946221514462,31.841118783338167,existing_project_kml,high,18756010800,existing_project,from zhanji_all.kml in uploaded project,"117.375187, 31.839279"
+ZJ017,詹记/宫廷桃酥类,詹记桃酥(宝业店),active_assumed,,长江东路504号宝业奥莱1F层,117.3318772267662,31.872631867171332,existing_project_kml,high,15956964205,existing_project,from zhanji_all.kml in uploaded project,"117.337526, 31.870727"
+ZJ018,詹记/宫廷桃酥类,詹记桃酥(家天下店),active_assumed,,铜陵北路与扶疏路交口家天下生活广场一层F118-2商铺,117.32095465613604,31.89694686485977,existing_project_kml,high,15056960282,existing_project,from zhanji_all.kml in uploaded project,"117.326578, 31.895016"
+ZJ019,詹记/宫廷桃酥类,詹记桃酥(恒通联家店),active_assumed,,长江东路180号恒通食品批发市场9-20幢综合楼1-101,117.3511312130526,31.870345430196625,existing_project_kml,high,13661727313,existing_project,from zhanji_all.kml in uploaded project,"117.356825, 31.868475"
+ZJ020,詹记/宫廷桃酥类,詹记桃酥(新站广场店),active_assumed,,新蚌埠路新站广场一楼1017-1020号商铺,117.32407648483748,31.940870657306625,existing_project_kml,high,13832728921,existing_project,from zhanji_all.kml in uploaded project,"117.329712, 31.938936"
+ZJ021,詹记/宫廷桃酥类,詹记桃酥(新站弘盛广场店),active_assumed,,铜陵北路与淮海大道交口弘盛商业广场C区一层109号商铺,117.34243156961632,31.93506815658005,existing_project_kml,high,18297980058,existing_project,from zhanji_all.kml in uploaded project,"117.348112, 31.933169"
+ZJ022,詹记/宫廷桃酥类,詹记桃酥(武里山天街店),active_assumed,,"武里山路与扶疏路交口天街商业中心2号楼114,115商铺",117.31469530384568,31.900387563053815,existing_project_kml,high,18326033840,existing_project,from zhanji_all.kml in uploaded project,"117.320303, 31.898444"
+ZJ023,詹记/宫廷桃酥类,詹记桃酥(淮合花园店),active_assumed,,万罗山路与沱河路交口淮合花园润宜佳购物中心一楼大门口F1-27号,117.30100788389505,31.924128855240102,existing_project_kml,high,13738802835,existing_project,from zhanji_all.kml in uploaded project,"117.306584, 31.922155"
+ZJ024,詹记/宫廷桃酥类,詹记桃酥(瑶海万达店),active_assumed,,临泉路瑶海万达广场7-3步行街123、123上号(商场南侧金街口),117.34468780136052,31.87795372136908,existing_project_kml,high,18056488069,existing_project,from zhanji_all.kml in uploaded project,"117.350368, 31.876071"
+ZJ025,詹记/宫廷桃酥类,詹记桃酥(禹悦里店),active_assumed,,新蚌埠路禹州禹悦里140B商铺,117.30813549225805,31.903575523023818,existing_project_kml,high,15755131931;19156452034,existing_project,from zhanji_all.kml in uploaded project,"117.313727, 31.901619"
+ZJ026,詹记/宫廷桃酥类,詹记桃酥(铜陵路永辉店)(暂停营业),active_assumed,,铜陵路与滨河路交叉口左岸广场F层D,117.31048071006983,31.850109068957458,existing_project_kml,high,15156090882,existing_project,from zhanji_all.kml in uploaded project,"117.316073, 31.848168"
+ZJ027,詹记/宫廷桃酥类,詹记桃酥(龙湖天街店),active_assumed,,长江东路与王岗路交汇处东南角龙湖天街A-1F-11,117.38541903042031,31.869851904157407,existing_project_kml,high,18705694175,existing_project,from zhanji_all.kml in uploaded project,"117.391165, 31.868019"
+ZJ028,詹记/宫廷桃酥类,詹记食品集合报道中心,active_assumed,,新海大道与文忠路交叉口东100米,117.3544720873603,31.892594901059407,existing_project_kml,high,[],existing_project,from zhanji_all.kml in uploaded project,"117.360175, 31.890725"
+ZJ029,詹记/宫廷桃酥类,詹记鱼羊馆(东湖山庄·碧云阁店),active_assumed,,武里山路东湖山庄碧云阁15栋,117.31260203842527,31.89583152921542,existing_project_kml,high,0551-64276729;13805608829,existing_project,from zhanji_all.kml in uploaded project,"117.318204, 31.893885"
+ZJ030,詹记/宫廷桃酥类,酥芝冠宫廷桃酥(糕点),active_assumed,,恒丰嘉园(东五里井地铁站D口步行270米),117.31816128003419,31.870846705938103,existing_project_kml,high,18226653791,existing_project,from zhanji_all.kml in uploaded project,"117.323775, 31.868916"
+BK001,鲍师傅糕点,鲍师傅糕点(合肥淮河路店),active_recent_web,庐阳区,合肥市庐阳区淮河路1号步行街东头(梦之城对面),117.30504,31.86979,static_map_center,high,17775335880,web,city8 page + static map center,强连锁烘焙/糕点竞争点
+BK002,仟吉西饼,仟吉西饼(万振逍遥苑店),active_recent_web,包河区,太湖东路万振逍遥苑一期2幢101门面,117.31090,31.83802,static_map_center,high,,web,city8 page + static map center,连锁烘焙竞争点
+BK003,甜嘟嘟,甜嘟嘟烘焙坊(舒城路店),active_recent_web,庐阳区/蜀山区边缘,舒城路2号正欣蔬菜超市1号门面房,,,address_only,medium,19966153386,web,directory + media mention,本地热门烘焙，待补坐标
+BK004,Noah'sBakery,Noah'sBakery诺亚德式面包房&咖啡,active_recent_web,蜀山区,欧风北街欧洲风情街C区03-2商铺,,,address_only,medium,,web,media opening report + directory,2023年新开，待补坐标
+BK005,超港,超港连锁烘焙坊(万达店),active_recent_web,包河区,合肥市包河区马鞍山路130号万达广场室外步行街入口南侧,,,address_only,medium,055162860033,web,directory result,待补坐标，可用包河万达中心点近似
+BK006,超港,超港(合肥商之都店),active_recent_web,庐阳区,合肥市庐阳区宿州路8号商之都中心广场F1,,,address_only,medium,18856926589,web,directory result,待补坐标，可用商之都中心点近似
+BK007,蓝塔烘焙,LanTa蓝塔烘焙(中环城店),active_recent_web,经开区,合肥市经济技术开发区繁华大道以南翡翠路以西中环购物中心内一层5号,,,address_only,medium,0551-62113278,web,directory result + boss/company,待补坐标，可用中环购物中心中心点近似
+BK008,蓝塔烘焙,LanTa蓝塔烘焙(宿州路店),active_recent_web,庐阳区,宿州路与红星路交汇处东北角(商之都北侧),,,address_only,medium,,web,directory result,待补坐标
+BK009,蓝塔烘焙,LanTa蓝塔烘焙(瑶海万达店),active_recent_web,瑶海区,临泉东路与和县路交口万达广场金街一楼,,,address_only,medium,0551-65717818,web,directory result,待补坐标
+BK010,面包好了,面包好了(常青藤街店),active_recent_web,庐阳区,合肥市庐阳区常青藤街四季华庭b栋103号,117.24716,31.89687,static_map_center,high,,web,city8 page + static map center,社区型烘焙竞争点
+BK011,HOT CRUSH,HOT CRUSH趁热集合·现烤面包艺术馆(合肥万象城店),active_recent_web,蜀山区/政务区,潜山路111号合肥万象城B1层B165A,117.23845,31.80630,mall_centroid_approx,medium,,web,mall store listing + mall centroid,坐标为万象城B1近似中心点
+BK012,Eyeable,Eyeable(合肥华润万象城店),active_recent_web,蜀山区/政务区,潜山路111号合肥华润万象城F2,117.23840,31.80537,mall_centroid_approx,medium,0551-65990896,web,directory result + mall centroid,坐标为万象城近似中心点
+BK013,Le Monde蕾茉,Le Monde蕾茉法式甜点(1912街区店),active_recent_web,蜀山区,黄山路与怀宁路交口金大地1912西街6号楼,117.22617,31.84745,block_centroid_approx,medium,,web,directory/listing + 1912 block centroid,坐标为1912街区近似中心点
+BK014,味爱烘焙,味爱烘焙店,active_recent_web,庐阳区,合肥市庐阳区肥西路1199号云滨花园1幢商107,,,address_only,medium,,web,boss/company,独立烘焙店，待补坐标
+BK015,有千层蛋糕,有千层蛋糕店,active_recent_web,蜀山区/政务区,潜山路588号天珑广场11幢1层11-商101,,,address_only,medium,,web,boss/company,千层甜品竞争点，待补坐标
+BK016,中领尚信,中领尚信烘焙店,active_recent_web,包河区,合肥市包河区马鞍山路130号商铺B1F62,,,address_only,medium,,web,boss/company,包河万达负一楼烘焙点，待补坐标
+BK017,采蝶轩,采蝶轩(中环购物中心店),active_recent_web,经开区,合肥市经济技术开发区繁华大道12167号中环购物中心一楼79、80号,,,address_only,medium,,web,boss/company,大型本地烘焙连锁分店，待补坐标
+BK018,采蝶轩,采蝶轩(圣地雅阁/蓝岸雅居店),active_recent_web,瑶海区,合肥市瑶海区和平路与明光路交口蓝岸雅居4幢商103室,,,address_only,medium,,web,boss/company,大型本地烘焙连锁分店，待补坐标
