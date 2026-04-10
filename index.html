@@ -17,7 +17,7 @@
     <div class="app-shell">
         <header class="topbar">
             <div class="brand-block">
-                <div class="brand-mark"><i class="fas fa-map-location-dot"></i></div>
+                <div class="brand-mark"><i class="fas fa-globe-asia"></i></div>
                 <div class="brand-copy">
                     <span class="eyebrow">Service industry location selection system</span>
                     <h1>服务业区位选址系统</h1>
@@ -25,20 +25,10 @@
             </div>
 
             <div class="toolbar">
-                <div class="toolbar-group">
-                    <button id="importKml" class="btn btn-primary"><i class="fas fa-file-import"></i> 导入KML</button>
-                    <button id="exportKml" class="btn btn-secondary"><i class="fas fa-file-export"></i> 导出KML</button>
-                    <button id="toggleHeatmapBtn" class="btn btn-heat"><i class="fas fa-fire"></i> 热力图开/关</button>
-                </div>
-
                 <div class="toolbar-group toolbar-group-compact">
-                    <div class="layer-control glass-input">
-                        <label for="baseLayerSelect">底图</label>
-                        <select id="baseLayerSelect">
-                            <option value="streets" selected>街道地图</option>
-                            <option value="satellite">卫星影像</option>
-                            <option value="hybrid">混合地图</option>
-                        </select>
+                    <div class="basemap-badge">
+                        <i class="fas fa-map"></i>
+                        <span>街道地图</span>
                     </div>
                 </div>
             </div>
@@ -56,16 +46,7 @@
 
                     <div id="map"></div>
 
-                    <div class="map-bottom-overlay" style="display:none">
-                        <div class="overlay-card">
-                            <span>当前底图</span>
-                            <strong id="currentBasemapLabel">街道地图</strong>
-                        </div>
-                        <div class="overlay-card">
-                            <span>热力状态</span>
-                            <strong id="currentHeatStatus">未生成</strong>
-                        </div>
-                    </div>
+
                 </div>
             </section>
 
@@ -100,18 +81,9 @@
 
                     <div class="population-time-block">
                         <div class="control-group control-group-inline population-time-inline">
-                            <label for="populationHourSelect">人口时段</label>
-                            <select id="populationHourSelect"></select>
+                            <label>人口时段</label>
+                            <span class="fixed-time-label">某周六下午 14:00</span>
                         </div>
-
-                        </div>
-
-                        <div class="control-group control-group-inline">
-                        <label for="heatImportMode">导入模式</label>
-                        <select id="heatImportMode">
-                            <option value="replace">覆盖模式（默认）</option>
-                            <option value="append">累积模式</option>
-                        </select>
                     </div>
 
                     <div class="range-group">
@@ -148,7 +120,7 @@
                     <div class="panel-card-head">
                         <div>
                             <p class="panel-overline">Layers</p>
-                            <h3><i class="fas fa-sitemap"></i> 图层树</h3>
+                            <h3><i class="fas fa-layer-group"></i> 图层</h3>
                         </div>
                         <div class="panel-actions-inline">
                             <button id="expandAllLayers" class="mini-btn" title="全部展开"><i class="fas fa-angles-down"></i></button>
@@ -156,44 +128,10 @@
                         </div>
                     </div>
 
-                    <div class="search-box">
-                        <i class="fas fa-magnifying-glass"></i>
-                        <input id="layerSearchInput" type="text" placeholder="搜索图层名称，例如：詹记 / 公交 / 小学">
-                    </div>
-
                     <div id="layersList"></div>
                 </section>
 
-                <section class="panel-card">
-                    <div class="panel-card-head">
-                        <div>
-                            <p class="panel-overline">Inspector</p>
-                            <h3><i class="fas fa-circle-info"></i> 信息面板</h3>
-                        </div>
-                    </div>
-                    <div id="infoPanel" class="content-stack"></div>
-                </section>
 
-                <section class="panel-card panel-card-split">
-                    <div>
-                        <div class="panel-card-head compact-head">
-                            <div>
-                                <p class="panel-overline">Measure</p>
-                                <h3><i class="fas fa-ruler-combined"></i> 测量结果</h3>
-                            </div>
-                        </div>
-                        <div id="measurementResults" class="content-stack"></div>
-                    </div>
-                    <div>
-                        <div class="panel-card-head compact-head">
-                            <div>
-                                <p class="panel-overline">Heatmap</p>
-                                <h3><i class="fas fa-chart-area"></i> 热力状态</h3>
-                            </div>
-                        </div>
-                        <div id="heatmapInfo" class="content-stack"></div>
-                    </div>
-                </section>
 
                 </div><!-- /viewLayers -->
 
@@ -250,13 +188,6 @@
                         </div>
                         <input type="range" id="weightCompetition" min="0" max="100" value="25" class="scoring-weight-slider">
                     </div>
-
-                    <div class="scoring-time-select">
-                        <div class="control-group control-group-inline">
-                            <label for="scoringHourSelect">评分时段</label>
-                            <select id="scoringHourSelect"></select>
-                        </div>
-                    </div>
                 </section>
 
                 <section class="panel-card" id="scoringResultCard" style="display:none">
@@ -274,6 +205,37 @@
         </main>
 
         <input type="file" id="kmlFileInput" accept=".kml,.kmz" style="display: none;">
+        
+        <!-- AI助手 -->
+        <div id="aiAssistant" class="ai-assistant" style="display: none;">
+            <div class="ai-assistant-header">
+                <div class="ai-assistant-title">
+                    <i class="fas fa-robot"></i>
+                    <span>选址AI助手</span>
+                </div>
+                <button id="closeAIAssistant" class="ai-assistant-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-assistant-body" id="aiAssistantBody">
+                <div class="ai-message">
+                    <div class="ai-message-content">
+                        <p>您好！我是选址AI助手，您可以向我咨询关于选址的问题，我会基于您的评分结果提供专业建议。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-assistant-footer">
+                <input type="text" id="aiAssistantInput" class="ai-assistant-input" placeholder="请输入您的问题...">
+                <button id="sendAIMessage" class="ai-assistant-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- AI助手按钮 -->
+        <button id="aiAssistantBtn" class="ai-assistant-btn" style="display: none;">
+            <i class="fas fa-robot"></i>
+        </button>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

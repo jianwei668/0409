@@ -4,10 +4,55 @@
  * 本次改造：
  * 1. 启动时自动加载目录中的内置 KML 文件
  * 2. 使用图层树统一控制内置KML、外部导入图层、手工绘制图层
- * 3. 新增“商圈店VS社区店”分组，接入宿州路店和大兴新居店独立 KML
+ * 3. 新增"商圈店VS社区店"分组，接入宿州路店和大兴新居店独立 KML
  * 4. 热力图数据改为按图层可见性和热力参与状态动态计算
  * 5. 人口数据与人口热力图改为读取 01原始数据CSV，并直接使用其中的 GCJ-02 坐标列
  */
+
+// WGS84 转 GCJ-02 坐标转换函数
+function wgs84ToGcj02(lng, lat) {
+    var pi = 3.1415926535897932384626;
+    var a = 6378245.0;
+    var ee = 0.00669342162296594323;
+    
+    if (outOfChina(lng, lat)) {
+        return [lng, lat];
+    }
+    
+    var dLat = transformLat(lng - 105.0, lat - 35.0);
+    var dLng = transformLng(lng - 105.0, lat - 35.0);
+    var radLat = lat / 180.0 * pi;
+    var magic = Math.sin(radLat);
+    magic = 1 - ee * magic * magic;
+    var sqrtMagic = Math.sqrt(magic);
+    dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * pi);
+    dLng = (dLng * 180.0) / (a / sqrtMagic * Math.cos(radLat) * pi);
+    var mgLat = lat + dLat;
+    var mgLng = lng + dLng;
+    return [mgLng, mgLat];
+}
+
+function transformLat(x, y) {
+    var pi = 3.1415926535897932384626;
+    var ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+    ret += (20.0 * Math.sin(6.0 * x * pi) + 20.0 * Math.sin(2.0 * x * pi)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(y * pi) + 40.0 * Math.sin(y / 3.0 * pi)) * 2.0 / 3.0;
+    ret += (160.0 * Math.sin(y / 12.0 * pi) + 320 * Math.sin(y * pi / 30.0)) * 2.0 / 3.0;
+    return ret;
+}
+
+function transformLng(x, y) {
+    var pi = 3.1415926535897932384626;
+    var ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+    ret += (20.0 * Math.sin(6.0 * x * pi) + 20.0 * Math.sin(2.0 * x * pi)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(x * pi) + 40.0 * Math.sin(x / 3.0 * pi)) * 2.0 / 3.0;
+    ret += (150.0 * Math.sin(x / 12.0 * pi) + 300.0 * Math.sin(x * pi / 30.0)) * 2.0 / 3.0;
+    return ret;
+}
+
+function outOfChina(lng, lat) {
+    return (lng < 72.004 || lng > 137.8347) || (lat < 0.8293 || lat > 55.8271);
+}
 
 let map;
 let drawnItems;
@@ -16,7 +61,7 @@ let layerIdCounter = 0;
 
 // ====== 热力图相关全局变量 ======
 let heatLayer = null;
-let heatmapVisible = false;
+let heatmapVisible = true;
 let importedHeatPoints = [];
 let manualHeatPoints = [];
 let heatmapRebuildHandle = null;
@@ -32,10 +77,10 @@ let currentBaseLayerLabel = '街道地图';
 let layerSearchTerm = '';
 
 const SOURCE_KIND_NAMES = {
-    populationDensity: '图层1 人口数据',
-    zhanji: '图层2 詹记',
-    specialKml: '图层3 社区店VS商圈店',
-    builtinKml: '内置KML',
+    populationDensity: '人口数据',
+    zhanji: '詹记',
+    roadNetwork: '路网图层',
+    builtinKml: '土地利用规划图层',
     importedKml: '外部导入KML',
     drawn: '手工绘制'
 };
@@ -49,9 +94,9 @@ const SOURCE_KIND_PANES = {
         name: 'zhanjiPane',
         zIndex: 420
     },
-    specialKml: {
-        name: 'specialKmlPane',
-        zIndex: 430
+    roadNetwork: {
+        name: 'roadNetworkPane',
+        zIndex: 405
     },
     builtinKml: {
         name: 'builtinKmlPane',
@@ -59,30 +104,21 @@ const SOURCE_KIND_PANES = {
     }
 };
 
+// 路网图层样式配置（按道路等级分色分粗细）
+const ROAD_NETWORK_STYLES = {
+    motorway:  { color: '#e74c3c', weight: 4, opacity: 0.85 },
+    trunk:     { color: '#e67e22', weight: 3.5, opacity: 0.80 },
+    primary:   { color: '#f39c12', weight: 3, opacity: 0.75 },
+    secondary: { color: '#3498db', weight: 2.5, opacity: 0.70 },
+    tertiary:  { color: '#95a5a6', weight: 2, opacity: 0.60 },
+    _default:  { color: '#bdc3c7', weight: 1.5, opacity: 0.50 }
+};
+const ROAD_NETWORK_FILE = 'road_network.json';
+
 // 目录中的内置 KML 清单（浏览器无法直接枚举目录，因此需要显式清单）
 const AUTO_LOAD_KML_FILES = [
     { fileName: 'zhanji_all.kml', sourceKind: 'zhanji', displayName: '詹记', visible: false },
-    {
-        fileName: 'zhanji_suzhoulu.kml',
-        sourceKind: 'specialKml',
-        visible: false,
-        heatIncluded: false,
-        displayName: '詹记（宿州路店）'
-    },
-    {
-        fileName: 'zhanji_daxingxinjv.kml',
-        sourceKind: 'specialKml',
-        visible: false,
-        heatIncluded: false,
-        displayName: '詹记（大兴新居店）'
-    },
-    { fileName: 'convenience_stores.kml', sourceKind: 'builtinKml', displayName: '便利店', visible: false },
-    { fileName: 'bus_stops.kml', sourceKind: 'builtinKml', displayName: '公交站', visible: false },
-    { fileName: 'primary_schools.kml', sourceKind: 'builtinKml', displayName: '小学', visible: false },
-    { fileName: 'courier_stations.kml', sourceKind: 'builtinKml', displayName: '快递站', visible: false },
-    { fileName: 'laoxiangji.kml', sourceKind: 'builtinKml', displayName: '老乡鸡', visible: false },
-    { fileName: 'metro_stations.kml', sourceKind: 'builtinKml', displayName: '地铁站', visible: false },
-    { fileName: 'major_roads.kml', sourceKind: 'builtinKml', displayName: '主要道路', visible: false }
+    { fileName: 'landuse.kml', sourceKind: 'builtinKml', displayName: '土地利用规划', visible: true, heatIncluded: false }
 ];
 
 const POPULATION_HOURS = Array.from({ length: 24 }, function(_, hour) {
@@ -156,6 +192,7 @@ const HEATMAP_STYLE_PROFILES = [
 ];
 const POPULATION_WEIGHT_STRATEGY = '热力图按空间点密度生成，不使用 value 权重；CSV 中的 value 仅作信息展示';
 let selectedPopulationHours = new Set(['14']);
+const POPULATION_FIXED_HOUR_LABEL = '某周六下午 14:00';
 
 function cancelScheduledMapLayoutRefresh() {
     mapLayoutRefreshTimers.forEach(function(timerId) {
@@ -696,16 +733,60 @@ function setAllTreeSections(open) {
 }
 
 function setSectionVisibility(sourceKind, visible) {
-    getAllLayerEntries()
-        .filter(entry => entry.sourceKind === sourceKind)
-        .forEach(entry => {
-            entry.visible = visible;
-            if (visible) {
-                addLayerEntryToMap(entry);
-            } else {
-                removeLayerEntryFromMap(entry);
-            }
+    const entries = getAllLayerEntries().filter(entry => entry.sourceKind === sourceKind);
+
+    // 懒加载的图层需要逐个加载
+    if (visible) {
+        const lazyKmlEntries = entries.filter(e => e._lazyKml && !e._lazyLoaded);
+        const lazyRoadEntries = entries.filter(e => e._lazyRoadNetwork && !e._lazyLoaded);
+        const readyEntries = entries.filter(e => (!e._lazyKml && !e._lazyRoadNetwork) || e._lazyLoaded);
+
+        readyEntries.forEach(entry => {
+            entry.visible = true;
+            addLayerEntryToMap(entry);
         });
+
+        const lazyPromises = [];
+
+        if (lazyKmlEntries.length > 0) {
+            updateInfoPanel(`正在加载 ${lazyKmlEntries.length} 个图层...`);
+            lazyPromises.push(
+                Promise.all(lazyKmlEntries.map(entry => ensureKmlLayerLoaded(entry))).then(function() {
+                    lazyKmlEntries.forEach(entry => {
+                        entry.visible = true;
+                        addLayerEntryToMap(entry);
+                        _syncLanduseLegend(entry, true);
+                    });
+                })
+            );
+        }
+
+        if (lazyRoadEntries.length > 0) {
+            updateInfoPanel('正在加载路网...');
+            lazyPromises.push(
+                Promise.all(lazyRoadEntries.map(entry => ensureRoadNetworkLoaded(entry))).then(function() {
+                    lazyRoadEntries.forEach(entry => {
+                        entry.visible = true;
+                        addLayerEntryToMap(entry);
+                    });
+                })
+            );
+        }
+
+        if (lazyPromises.length > 0) {
+            Promise.all(lazyPromises).then(function() {
+                updateLayersList();
+                rebuildHeatmap();
+                updateInfoPanel(`${getSourceKindName(sourceKind)} 已全部显示`);
+            });
+        }
+    } else {
+        entries.forEach(entry => {
+            entry.visible = false;
+            removeLayerEntryFromMap(entry);
+            _syncLanduseLegend(entry, false);
+        });
+    }
 
     updateLayersList();
     rebuildHeatmap();
@@ -888,25 +969,31 @@ function initMap() {
         position: 'bottomleft'
     }).addTo(map);
 
-    document.getElementById('baseLayerSelect').addEventListener('change', function(e) {
-        const selectedValue = e.target.value;
-        Object.values(baseLayers).forEach(layer => {
-            if (map.hasLayer(layer)) {
-                map.removeLayer(layer);
-            }
-        });
-
-        if (selectedValue === 'streets') {
-            baseLayers['街道地图'].addTo(map);
-            updateBaseLayerLabel('街道地图');
-        } else if (selectedValue === 'satellite') {
-            baseLayers['卫星影像'].addTo(map);
-            updateBaseLayerLabel('卫星影像');
-        } else if (selectedValue === 'hybrid') {
-            baseLayers['混合地图'].addTo(map);
-            updateBaseLayerLabel('混合地图');
-        }
-    });
+    // ---------- 土地利用图例 ----------
+    const landuseLegendCtrl = L.control({ position: 'bottomright' });
+    landuseLegendCtrl.onAdd = function () {
+        const div = L.DomUtil.create('div', 'landuse-legend');
+        const items = [
+            { color: '#ffa500', label: '居住用地' },
+            { color: '#e00000', label: '商业用地' },
+            { color: '#808080', label: '工业用地' },
+            { color: '#ff80ff', label: '零售用地' },
+            { color: '#66cc00', label: '农业用地' },
+            { color: '#408000', label: '林地' },
+            { color: '#80ff00', label: '休闲绿地' },
+            { color: '#c08000', label: '建设用地' }
+        ];
+        div.innerHTML = '<strong>土地利用图例</strong>' +
+            items.map(function (it) {
+                return '<div class="landuse-legend-item">' +
+                    '<span class="landuse-legend-swatch" style="background:' + it.color + '"></span>' +
+                    it.label + '</div>';
+            }).join('');
+        L.DomEvent.disableClickPropagation(div);
+        return div;
+    };
+    window._landuseLegendCtrl = landuseLegendCtrl;
+    window._landuseLegendVisible = false;
 
     updateBaseLayerLabel('街道地图');
 
@@ -953,31 +1040,28 @@ function initHeatmapControls() {
     const blurSlider = document.getElementById('heatBlur');
     const opacitySlider = document.getElementById('heatMinOpacity');
 
-    radiusSlider.addEventListener('input', function() {
-        document.getElementById('heatRadiusValue').textContent = this.value;
-    });
+    if (radiusSlider) {
+        radiusSlider.addEventListener('input', function() {
+            document.getElementById('heatRadiusValue').textContent = this.value;
+        });
+    }
 
-    blurSlider.addEventListener('input', function() {
-        document.getElementById('heatBlurValue').textContent = this.value;
-    });
+    if (blurSlider) {
+        blurSlider.addEventListener('input', function() {
+            document.getElementById('heatBlurValue').textContent = this.value;
+        });
+    }
 
-    opacitySlider.addEventListener('input', function() {
-        document.getElementById('heatMinOpacityValue').textContent = this.value;
-    });
+    if (opacitySlider) {
+        opacitySlider.addEventListener('input', function() {
+            document.getElementById('heatMinOpacityValue').textContent = this.value;
+        });
+    }
 
-    document.getElementById('rebuildHeatmap').addEventListener('click', function() {
-        rebuildHeatmap();
-    });
-
-    document.getElementById('toggleHeatmapBtn').addEventListener('click', function() {
-        toggleHeatmap();
-    });
-
-    const heatModeSelect = document.getElementById('heatImportMode');
-    if (heatModeSelect) {
-        heatModeSelect.value = heatImportMode;
-        heatModeSelect.addEventListener('change', function() {
-            setHeatImportMode(this.value);
+    const rebuildBtn = document.getElementById('rebuildHeatmap');
+    if (rebuildBtn) {
+        rebuildBtn.addEventListener('click', function() {
+            rebuildHeatmap();
         });
     }
 
@@ -1014,9 +1098,12 @@ function rebuildHeatmap() {
         return;
     }
 
-    const radius = parseInt(document.getElementById('heatRadius').value, 10);
-    const blur = parseInt(document.getElementById('heatBlur').value, 10);
-    const minOpacity = parseFloat(document.getElementById('heatMinOpacity').value);
+    const radiusEl = document.getElementById('heatRadius');
+    const blurEl = document.getElementById('heatBlur');
+    const opacityEl = document.getElementById('heatMinOpacity');
+    const radius = radiusEl ? parseInt(radiusEl.value, 10) : 25;
+    const blur = blurEl ? parseInt(blurEl.value, 10) : 18;
+    const minOpacity = opacityEl ? parseFloat(opacityEl.value) : 0.35;
     const peakPoint = getHeatmapPeakPoint(allHeatPoints);
     const styleProfile = getCurrentHeatmapStyleProfile();
 
@@ -1102,10 +1189,12 @@ function clearHeatmap() {
 }
 
 function updateHeatmapInfo(html) {
+    const el = document.getElementById('heatmapInfo');
+    if (!el) return;
     const normalized = typeof html === 'string' && html.trim().startsWith('<')
         ? html
         : `<div class="empty-state">${html}</div>`;
-    document.getElementById('heatmapInfo').innerHTML = normalized;
+    el.innerHTML = normalized;
     updateDashboardStats();
 }
 
@@ -1288,7 +1377,8 @@ function showMeasurementInfo(layer, type) {
         `;
     }
 
-    document.getElementById('measurementResults').innerHTML = measurementText;
+    const measureEl = document.getElementById('measurementResults');
+    if (measureEl) measureEl.innerHTML = measurementText;
 }
 
 function calculatePerimeter(latlngs) {
@@ -1341,26 +1431,20 @@ function updateLayersList() {
     const sections = [
         {
             key: 'populationDensity',
-            title: '图层1 人口数据',
+            title: '人口数据',
             icon: 'fas fa-chart-area',
             items: allEntries.filter(entry => entry.sourceKind === 'populationDensity')
         },
         {
-            key: 'zhanji',
-            title: '图层2 詹记',
-            icon: 'fas fa-store',
-            items: allEntries.filter(entry => entry.sourceKind === 'zhanji')
-        },
-        {
-            key: 'specialKml',
-            title: '图层3 社区店VS商圈店',
-            icon: 'fas fa-people-roof',
-            items: allEntries.filter(entry => entry.sourceKind === 'specialKml')
+            key: 'roadNetwork',
+            title: '路网图层',
+            icon: 'fas fa-road',
+            items: allEntries.filter(entry => entry.sourceKind === 'roadNetwork')
         },
         {
             key: 'builtinKml',
-            title: '内置KML图层',
-            icon: 'fas fa-folder-tree',
+            title: '土地利用规划图层',
+            icon: 'fas fa-map',
             items: allEntries.filter(entry => entry.sourceKind === 'builtinKml')
         },
         {
@@ -1374,6 +1458,12 @@ function updateLayersList() {
             title: '手工绘制图层',
             icon: 'fas fa-pen-ruler',
             items: allEntries.filter(entry => entry.sourceKind === 'drawn')
+        },
+        {
+            key: 'zhanji',
+            title: '詹记',
+            icon: 'fas fa-store',
+            items: allEntries.filter(entry => entry.sourceKind === 'zhanji')
         }
     ];
 
@@ -1403,13 +1493,13 @@ function updateLayersList() {
         tools.className = 'tree-section-tools';
         const showAllBtn = document.createElement('button');
         showAllBtn.className = 'tree-tool-btn';
-        showAllBtn.innerHTML = '<i class="fas fa-eye"></i> 全开';
+        showAllBtn.innerHTML = '<i class="fas fa-eye"></i> 开';
         showAllBtn.onclick = function() {
             setSectionVisibility(section.key, true);
         };
         const hideAllBtn = document.createElement('button');
         hideAllBtn.className = 'tree-tool-btn';
-        hideAllBtn.innerHTML = '<i class="fas fa-eye-slash"></i> 全关';
+        hideAllBtn.innerHTML = '<i class="fas fa-eye-slash"></i> 关';
         hideAllBtn.onclick = function() {
             setSectionVisibility(section.key, false);
         };
@@ -1445,9 +1535,6 @@ function createTreeLayerNode(layerEntry) {
     }
     if (layerEntry.sourceKind === 'builtinKml') {
         node.classList.add('tree-node-builtin');
-    }
-    if (layerEntry.sourceKind === 'specialKml') {
-        node.classList.add('tree-node-special');
     }
 
     const topRow = document.createElement('div');
@@ -1490,14 +1577,6 @@ function createTreeLayerNode(layerEntry) {
     const controls = document.createElement('div');
     controls.className = 'layer-controls';
 
-    const infoBtn = document.createElement('button');
-    infoBtn.innerHTML = '<i class="fas fa-circle-info"></i>';
-    infoBtn.title = '查看图层信息';
-    infoBtn.onclick = function(e) {
-        e.stopPropagation();
-        showLayerInfo(layerEntry.id);
-    };
-
     const zoomBtn = document.createElement('button');
     zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i>';
     zoomBtn.title = '缩放至图层';
@@ -1514,7 +1593,6 @@ function createTreeLayerNode(layerEntry) {
         deleteLayer(layerEntry.id);
     };
 
-    controls.appendChild(infoBtn);
     controls.appendChild(zoomBtn);
     controls.appendChild(deleteBtn);
 
@@ -1536,71 +1614,11 @@ function createTreeLayerNode(layerEntry) {
 }
 
 function buildTreeChildren(layerEntry) {
-    if (!layerEntry.featureSummary && layerEntry.sourceKind !== 'drawn') {
-        return null;
-    }
-
-    if (layerEntry.sourceKind === 'populationDensity') {
-        const populationStats = [];
-
-        if (layerEntry.timeWindowLabel) {
-            populationStats.push(`时段 ${layerEntry.timeWindowLabel}`);
-        }
-
-        if (layerEntry.heatIncluded === false) {
-            populationStats.push('热力已关闭');
-        }
-
-        if (populationStats.length === 0) {
-            return null;
-        }
-
-        const children = document.createElement('div');
-        children.className = 'tree-node-children';
-        children.textContent = populationStats.join(' · ');
-        return children;
-    }
-
-    const stats = [];
-
-    if (layerEntry.featureSummary) {
-        const summary = layerEntry.featureSummary;
-        if (summary.marker > 0) stats.push(`点 ${summary.marker}`);
-        if (summary.polyline > 0) stats.push(`线 ${summary.polyline}`);
-        if (summary.polygon > 0) stats.push(`面 ${summary.polygon}`);
-        if (layerEntry.heatPoints && layerEntry.heatPoints.length > 0) stats.push(`热力点 ${layerEntry.heatPoints.length}`);
-        if (layerEntry.timeWindowLabel) stats.push(`时段 ${layerEntry.timeWindowLabel}`);
-        if (layerEntry.renderModeLabel) stats.push(layerEntry.renderModeLabel);
-    }
-
-    if (layerEntry.sourceKind === 'drawn') {
-        stats.push(layerEntry.type === 'marker' ? '手动标记' : getLayerTypeName(layerEntry.type));
-        if (layerEntry.heatIncluded === false) {
-            stats.push('热力已排除');
-        }
-    }
-
-    if (stats.length === 0) return null;
-
-    const children = document.createElement('div');
-    children.className = 'tree-node-children';
-    children.textContent = stats.join(' · ');
-    return children;
+    return null;
 }
 
 function getLayerMetaText(layerEntry) {
-    if (layerEntry.sourceKind === 'populationDensity') {
-        return '';
-    }
-
-    if (layerEntry.type === 'kmlgroup' || layerEntry.type === 'populationgroup') {
-        const featureCount = typeof layerEntry.featureCount === 'number'
-            ? layerEntry.featureCount
-            : (layerEntry.subLayers ? layerEntry.subLayers.length : 0);
-        return `${featureCount} 个要素`;
-    }
-
-    return getLayerTypeName(layerEntry.type);
+    return '';
 }
 
 function getLayerIcon(layerEntry) {
@@ -1615,8 +1633,7 @@ function getLayerIcon(layerEntry) {
     const sourceIcons = {
         populationDensity: 'fas fa-chart-area',
         zhanji: 'fas fa-store',
-        specialKml: 'fas fa-people-roof',
-        builtinKml: 'fas fa-folder-tree',
+        builtinKml: 'fas fa-map',
         importedKml: 'fas fa-file-import',
         drawn: 'fas fa-pen-ruler'
     };
@@ -1685,7 +1702,11 @@ function showLayerInfo(id) {
         infoHtml += `<div class="info-row"><span class="info-label">热力点数量:</span><span>${layerEntry.heatPoints.length}</span></div>`;
     }
 
-    document.getElementById('infoPanel').innerHTML = infoHtml;
+    // 检查infoPanel元素是否存在
+    const infoPanel = document.getElementById('infoPanel');
+    if (infoPanel) {
+        infoPanel.innerHTML = infoHtml;
+    }
 
     if (layerEntry.type === 'kmlgroup' || layerEntry.type === 'populationgroup') {
         const bounds = getLayerBounds(layerEntry);
@@ -1693,7 +1714,9 @@ function showLayerInfo(id) {
             const northEast = bounds.getNorthEast();
             const southWest = bounds.getSouthWest();
 
-            document.getElementById('measurementResults').innerHTML = `
+            // 检查measurementResults元素是否存在
+            const measureEl = document.getElementById('measurementResults');
+            if (measureEl) measureEl.innerHTML = `
                 <div class="info-row"><span class="info-label">东北角:</span><span>${northEast.lat.toFixed(6)}, ${northEast.lng.toFixed(6)}</span></div>
                 <div class="info-row"><span class="info-label">西南角:</span><span>${southWest.lat.toFixed(6)}, ${southWest.lng.toFixed(6)}</span></div>
             `;
@@ -1707,6 +1730,42 @@ function setLayerVisibility(id, visible) {
     const layerEntry = layers[id];
     if (!layerEntry) return;
 
+    // 懒加载 KML：首次开启时拉取数据
+    if (visible && layerEntry._lazyKml && !layerEntry._lazyLoaded) {
+        layerEntry.visible = false; // 暂时保持隐藏
+        updateInfoPanel(`正在加载 ${layerEntry.name}...`);
+        ensureKmlLayerLoaded(layerEntry).then(function(ok) {
+            if (ok) {
+                layerEntry.visible = true;
+                addLayerEntryToMap(layerEntry);
+                updateLayersList();
+                rebuildHeatmap();
+                updateInfoPanel(`${layerEntry.name} 已显示`);
+                _syncLanduseLegend(layerEntry, true);
+            } else {
+                updateLayersList();
+            }
+        });
+        return;
+    }
+
+    // 懒加载路网 GeoJSON：首次开启时拉取数据
+    if (visible && layerEntry._lazyRoadNetwork && !layerEntry._lazyLoaded) {
+        layerEntry.visible = false;
+        updateInfoPanel('正在加载路网...');
+        ensureRoadNetworkLoaded(layerEntry).then(function(ok) {
+            if (ok) {
+                layerEntry.visible = true;
+                addLayerEntryToMap(layerEntry);
+                updateLayersList();
+                updateInfoPanel('路网已显示');
+            } else {
+                updateLayersList();
+            }
+        });
+        return;
+    }
+
     layerEntry.visible = visible;
 
     if (visible) {
@@ -1718,6 +1777,19 @@ function setLayerVisibility(id, visible) {
     updateLayersList();
     rebuildHeatmap();
     updateInfoPanel(`${layerEntry.name} 已${visible ? '显示' : '隐藏'}`);
+    _syncLanduseLegend(layerEntry, visible);
+}
+
+function _syncLanduseLegend(layerEntry, visible) {
+    if (layerEntry.name === '土地利用规划' || layerEntry.name === '合肥市土地利用规划') {
+        if (visible && !window._landuseLegendVisible) {
+            window._landuseLegendCtrl.addTo(map);
+            window._landuseLegendVisible = true;
+        } else if (!visible && window._landuseLegendVisible) {
+            window._landuseLegendCtrl.remove();
+            window._landuseLegendVisible = false;
+        }
+    }
 }
 
 function toggleLayerVisibility(id) {
@@ -1758,7 +1830,9 @@ function deleteLayer(id) {
 
 function updateInfoPanel(message) {
     const infoPanel = document.getElementById('infoPanel');
-    infoPanel.innerHTML = `<div class="message-card"><i class="fas fa-wand-magic-sparkles"></i><div>${message}</div></div>`;
+    if (infoPanel) {
+        infoPanel.innerHTML = `<div class="message-card"><i class="fas fa-wand-magic-sparkles"></i><div>${message}</div></div>`;
+    }
 
     let tone = 'info';
     if (message.includes('失败') || message.includes('错误')) tone = 'warning';
@@ -1985,7 +2059,7 @@ function processKMLContent(kmlContent, resources = {}, options = {}) {
 
         let kmlTitle = sourceName || '导入的KML图层';
         const kmlName = kml.querySelector('Document > name');
-        if (kmlName && kmlName.textContent) {
+        if (!sourceName && kmlName && kmlName.textContent) {
             kmlTitle = kmlName.textContent;
         }
 
@@ -2364,10 +2438,7 @@ function formatPopulationHourLabel(hour) {
 }
 
 function formatPopulationHourRanges(hours) {
-    if (!hours.length) return '未选择';
-
-    const hour = hours[0];
-    return `${formatPopulationHourLabel(hour)}-${hour}:59`;
+    return POPULATION_FIXED_HOUR_LABEL;
 }
 
 function updatePopulationTimeSummary() {
@@ -2381,20 +2452,6 @@ function updatePopulationTimeSummary() {
 }
 
 function renderPopulationTimeControls() {
-    const selectElement = document.getElementById('populationHourSelect');
-    if (selectElement && !selectElement.options.length) {
-        POPULATION_HOURS.forEach(hour => {
-            const option = document.createElement('option');
-            option.value = hour;
-            option.textContent = formatPopulationHourLabel(hour);
-            selectElement.appendChild(option);
-        });
-    }
-
-    if (selectElement) {
-        selectElement.value = getSelectedPopulationHour();
-    }
-
     updatePopulationTimeSummary();
 }
 
@@ -2420,13 +2477,6 @@ function setSelectedPopulationHours(hours, options = {}) {
 }
 
 function initPopulationTimeControls() {
-    const selectElement = document.getElementById('populationHourSelect');
-    if (selectElement) {
-        selectElement.addEventListener('change', function() {
-            setSelectedPopulationHours([this.value]);
-        });
-    }
-
     renderPopulationTimeControls();
 }
 
@@ -2763,34 +2813,7 @@ function updatePopulationLayerViewport(layerEntry) {
     layerEntry.layer.clearLayers();
     layerEntry.renderedPointCount = 0;
 
-    if (layerEntry.visible === false || map.getZoom() < POPULATION_POINT_MIN_ZOOM) {
-        return;
-    }
-
-    const paddedBounds = map.getBounds().pad(POPULATION_VIEW_PADDING);
-    const paneName = getLayerPaneName(layerEntry.sourceKind);
-    const zoom = map.getZoom();
-    const viewportPoints = getPopulationViewportPoints(layerEntry, paddedBounds, zoom);
-    const interactive = zoom >= POPULATION_POINT_POPUP_MIN_ZOOM;
-
-    viewportPoints.forEach(point => {
-        const marker = L.circleMarker([point.lat, point.lng], withLayerPane({
-            renderer: populationPointRenderer,
-            radius: getPopulationPointRadius(point.totalWeight, layerEntry.weightStats.max),
-            color: '#215dff',
-            weight: 1,
-            fillColor: '#8bb7ff',
-            fillOpacity: getPopulationPointOpacity(point.totalWeight, layerEntry.weightStats.max),
-            interactive: interactive
-        }, paneName));
-
-        if (interactive) {
-            marker.bindPopup(buildPopulationPopupHtml(point));
-        }
-
-        layerEntry.layer.addLayer(marker);
-        layerEntry.renderedPointCount += 1;
-    });
+    // Population density now displays only as a heatmap, no marker points rendered.
 }
 
 function upsertPopulationLayerEntry(populationData, options = {}) {
@@ -2815,7 +2838,7 @@ function upsertPopulationLayerEntry(populationData, options = {}) {
         created: new Date().toLocaleString(),
         visible: options.visible === true,
         heatIncluded: options.heatIncluded !== false,
-        includeHeatWhenHidden: true,
+        includeHeatWhenHidden: false,
         sourceKind: 'populationDensity',
         heatPoints: populationData.heatPoints,
         featureCount: populationData.points.length,
@@ -2984,15 +3007,17 @@ async function ensurePopulationHourLoaded(hour) {
 }
 
 async function loadInitialDataResources() {
-    try {
-        await loadPopulationCsvFiles();
-    } catch (error) {
+    // KML 注册（瞬时）与 CSV 加载并行
+    const csvPromise = loadPopulationCsvFiles().catch(function(error) {
         console.error('加载人口CSV失败:', error);
         setSystemStatus(`人口CSV加载失败：${error.message}`, 'warning');
         updateInfoPanel(`人口CSV加载失败：${error.message}`);
-    }
+    });
 
-    await loadBuiltInKmlFiles();
+    const kmlPromise = loadBuiltInKmlFiles();
+    registerRoadNetworkLayer();
+
+    await Promise.all([csvPromise, kmlPromise]);
 }
 
 function decodeUnicodeFilename(name) {
@@ -3011,67 +3036,328 @@ function buildRelativeFileUrl(fileName) {
 }
 
 async function loadBuiltInKmlFiles() {
-    updateInfoPanel('正在自动加载预置KML文件...');
-
-    const loadResults = await Promise.all(AUTO_LOAD_KML_FILES.map(async function(item) {
+    // 注册 KML 文件为占位符条目（懒加载：不实际拉取文件）
+    AUTO_LOAD_KML_FILES.forEach(function(item) {
         const fileConfig = typeof item === 'string'
             ? { fileName: item, sourceKind: 'builtinKml' }
             : item;
         const fileName = fileConfig.fileName;
+        const groupId = `layer_${layerIdCounter++}`;
 
-        try {
-            const response = await fetch(buildRelativeFileUrl(fileName));
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-
-            const kmlText = await response.text();
-            return { fileName, kmlText, fileConfig, ok: true };
-        } catch (error) {
-            console.error(`自动加载 KML 失败: ${fileName}`, error);
-            return { fileName, ok: false, error, sourceKind: fileConfig.sourceKind || 'builtinKml' };
-        }
-    }));
-
-    const results = [];
-
-    loadResults.forEach(function(result) {
-        if (!result.ok) {
-            results.push(result);
-            return;
-        }
-
-        const { fileName, kmlText, fileConfig } = result;
-
-        try {
-            processKMLContent(kmlText, {}, {
-                sourceName: fileConfig.displayName || decodeUnicodeFilename(fileName).replace(/\.kml$/i, ''),
-                sourceKind: fileConfig.sourceKind || 'builtinKml',
-                autoZoom: false,
-                skipHeatmapRebuild: true,
-                visible: fileConfig.visible !== false,
-                heatIncluded: fileConfig.heatIncluded !== false
-            });
-
-            results.push({ fileName, ok: true, sourceKind: fileConfig.sourceKind || 'builtinKml' });
-        } catch (error) {
-            console.error(`处理 KML 失败: ${fileName}`, error);
-            results.push({ fileName, ok: false, error, sourceKind: fileConfig.sourceKind || 'builtinKml' });
-        }
+        layers[groupId] = {
+            id: groupId,
+            layer: new L.FeatureGroup(),
+            type: 'kmlgroup',
+            name: fileConfig.displayName || decodeUnicodeFilename(fileName).replace(/\.kml$/i, ''),
+            created: new Date().toLocaleString(),
+            imported: true,
+            visible: fileConfig.visible || false,
+            heatIncluded: fileConfig.heatIncluded !== false,
+            heatPoints: [],
+            sourceKind: fileConfig.sourceKind || 'builtinKml',
+            subLayers: [],
+            featureSummary: '未加载 · 开启时自动加载',
+            _lazyKml: fileName,
+            _lazyConfig: fileConfig,
+            _lazyLoaded: false
+        };
     });
 
-    rebuildHeatmap();
-    fitMapToVisibleLayers();
     updateLayersList();
+    setSystemStatus(`已注册 ${AUTO_LOAD_KML_FILES.length} 个预置KML图层（按需加载）`, 'success');
+    updateInfoPanel(`已注册 ${AUTO_LOAD_KML_FILES.length} 个预置KML图层，开启时自动加载。`);
 
-    const successCount = results.filter(item => item.ok).length;
-    const failed = results.filter(item => !item.ok);
-    if (failed.length > 0) {
-        setSystemStatus(`已自动加载 ${successCount} 个预置KML，失败 ${failed.length} 个，请检查文件路径或本地服务环境。`, 'warning');
-        updateInfoPanel(`已自动加载 ${successCount} 个预置KML，失败 ${failed.length} 个。请检查文件路径或本地服务环境。`);
-    } else {
-        setSystemStatus(`全部 ${successCount} 个预置KML资源已加载完成，默认均为隐藏状态。`, 'success');
-        updateInfoPanel(`已自动加载全部 ${successCount} 个预置KML资源，并按图层2、图层3和内置KML图层分组管理。`);
+    // 自动加载和显示visible为true的图层
+    for (const groupId in layers) {
+        const layerEntry = layers[groupId];
+        if (layerEntry.visible && layerEntry._lazyKml && !layerEntry._lazyLoaded) {
+            console.log(`开始自动加载 ${layerEntry.name}...`);
+            updateInfoPanel(`正在自动加载 ${layerEntry.name}...`);
+            try {
+                const loadSuccess = await ensureKmlLayerLoaded(layerEntry);
+                console.log(`${layerEntry.name} 加载结果:`, loadSuccess, `_lazyLoaded:`, layerEntry._lazyLoaded);
+                if (layerEntry._lazyLoaded) {
+                    console.log(`将 ${layerEntry.name} 添加到地图...`);
+                    addLayerEntryToMap(layerEntry);
+                    console.log(`${layerEntry.name} 已添加到地图`);
+                    updateInfoPanel(`${layerEntry.name} 已显示`);
+                    _syncLanduseLegend(layerEntry, true);
+                    console.log(`${layerEntry.name} 图例已同步`);
+                } else {
+                    console.error(`${layerEntry.name} 加载失败，_lazyLoaded 为 false`);
+                    layerEntry.visible = false;
+                    updateLayersList();
+                }
+            } catch (error) {
+                console.error(`自动加载 ${layerEntry.name} 失败:`, error);
+                updateInfoPanel(`${layerEntry.name} 加载失败：${error.message}`);
+                layerEntry.visible = false;
+                updateLayersList();
+            }
+        }
+    }
+}
+
+function registerRoadNetworkLayer() {
+    const groupId = `layer_${layerIdCounter++}`;
+    layers[groupId] = {
+        id: groupId,
+        layer: new L.FeatureGroup(),
+        type: 'kmlgroup',
+        name: '路网',
+        created: new Date().toLocaleString(),
+        imported: true,
+        visible: false,
+        heatIncluded: false,
+        heatPoints: [],
+        sourceKind: 'roadNetwork',
+        subLayers: [],
+        featureSummary: '未加载 · 开启时自动加载',
+        _lazyRoadNetwork: true,
+        _lazyLoaded: false
+    };
+}
+
+async function ensureRoadNetworkLoaded(layerEntry) {
+    if (!layerEntry._lazyRoadNetwork || layerEntry._lazyLoaded) return true;
+
+    try {
+        updateInfoPanel('正在加载路网数据...');
+        const response = await fetch(buildRelativeFileUrl(ROAD_NETWORK_FILE));
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const geojson = await response.json();
+        const paneName = getLayerPaneName('roadNetwork');
+        const featureGroup = layerEntry.layer;
+        const subLayersList = [];
+
+        L.geoJSON(geojson, {
+            style: function(feature) {
+                var highway = (feature.properties && feature.properties.highway) || '';
+                var s = ROAD_NETWORK_STYLES[highway] || ROAD_NETWORK_STYLES._default;
+                return {
+                    color: s.color,
+                    weight: s.weight,
+                    opacity: s.opacity,
+                    lineCap: 'round',
+                    lineJoin: 'round'
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                featureGroup.addLayer(layer);
+                subLayersList.push(layer);
+            },
+            pane: paneName
+        });
+
+        layerEntry.subLayers = subLayersList;
+        layerEntry.featureSummary = subLayersList.length + ' 条道路';
+        layerEntry._lazyLoaded = true;
+
+        updateInfoPanel('路网加载完成（' + subLayersList.length + ' 条道路）');
+        return true;
+    } catch (error) {
+        console.error('路网加载失败:', error);
+        updateInfoPanel('路网加载失败：' + error.message);
+        return false;
+    }
+}
+
+async function ensureKmlLayerLoaded(layerEntry) {
+    if (!layerEntry._lazyKml || layerEntry._lazyLoaded) return true;
+
+    const fileName = layerEntry._lazyKml;
+    const fileConfig = layerEntry._lazyConfig;
+
+    try {
+        updateInfoPanel(`正在加载 ${layerEntry.name}...`);
+        const response = await fetch(buildRelativeFileUrl(fileName));
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const kmlText = await response.text();
+        const kml = new DOMParser().parseFromString(kmlText, 'text/xml');
+        var geoJSON;
+        if (typeof togeojson === 'undefined') {
+            if (typeof toGeoJSON !== 'undefined') {
+                geoJSON = toGeoJSON.kml(kml);
+            } else {
+                throw new Error('没有可用的KML到GeoJSON转换库');
+            }
+        } else {
+            geoJSON = togeojson.kml(kml);
+        }
+        const styles = extractKMLStyles(kml, {});
+        // 转换热力点坐标
+        const newHeatPoints = extractHeatPointsFromGeoJSON(geoJSON).map(function(point) {
+            var [lng, lat, intensity] = point;
+            var [newLng, newLat] = wgs84ToGcj02(lng, lat);
+            return [newLat, newLng, intensity];
+        });
+
+        const layerPaneName = getLayerPaneName(layerEntry.sourceKind);
+        const importedLayerGroup = layerEntry.layer;
+        const importedLayersList = [];
+
+        // 转换 GeoJSON 坐标从 WGS84 到 GCJ-02
+//        function transformGeoJSONCoordinates(geoJSON) {
+//            function transformCoordinates(coords) {
+//                if (Array.isArray(coords)) {
+//                    if (Array.isArray(coords[0]) && typeof coords[0][0] === 'number') {
+//                        // 坐标对 [lng, lat]
+//                        var [lng, lat] = coords;
+//                        var [newLng, newLat] = wgs84ToGcj02(lng, lat);
+//                        return [newLng, newLat];
+//                    } else {
+//                        // 坐标数组
+//                        return coords.map(transformCoordinates);
+//                    }
+//                }
+//                return coords;
+//            }
+//
+//            function transformGeometry(geometry) {
+//                if (geometry && geometry.coordinates) {
+//                    geometry.coordinates = transformCoordinates(geometry.coordinates);
+//                }
+//                return geometry;
+//            }
+//
+//            if (geoJSON.type === 'FeatureCollection') {
+//                geoJSON.features = geoJSON.features.map(function(feature) {
+//                    if (feature.geometry) {
+//                        feature.geometry = transformGeometry(feature.geometry);
+//                    }
+//                    return feature;
+//                });
+//            } else if (geoJSON.type === 'Feature') {
+//                if (geoJSON.geometry) {
+//                    geoJSON.geometry = transformGeometry(geoJSON.geometry);
+//                }
+//            } else if (geoJSON.geometry) {
+//                geoJSON.geometry = transformGeometry(geoJSON.geometry);
+//            }
+//
+//            return geoJSON;
+//        }
+        function transformGeoJSONCoordinates(geoJSON) {
+            if (!geoJSON || !geoJSON.features) return geoJSON;
+            function convertCoords(coords) {
+                if (typeof coords[0] === 'number' && typeof coords[1] === 'number') {
+                    const [lng, lat] = wgs84ToGcj02(coords[0], coords[1]);
+                    return [lng, lat];
+                }
+                return coords.map(convertCoords);
+            }
+            geoJSON.features.forEach(feature => {
+                if (feature.geometry && feature.geometry.coordinates) {
+                    feature.geometry.coordinates = convertCoords(feature.geometry.coordinates);
+                }
+            });
+            return geoJSON;
+        }
+        // 转换坐标
+        //geoJSON = transformGeoJSONCoordinates(geoJSON);
+        if (fileConfig.fileName === 'landuse.kml') {
+              geoJSON = transformGeoJSONCoordinates(geoJSON);
+         }
+
+        L.geoJSON(geoJSON, {
+            style: function(feature) {
+                if (feature.properties && feature.properties.styleUrl) {
+                    var styleId = feature.properties.styleUrl.replace('#', '');
+                    if (styles[styleId] && styles[styleId].pairs && styles[styleId].pairs.normal) {
+                        styleId = styles[styleId].pairs.normal;
+                    }
+                    var style = styles[styleId];
+                    if (style) {
+                        if (!style._leafletStyle) {
+                            style._leafletStyle = {
+                                color: style.lineColor || '#3498db',
+                                weight: style.lineWidth || 4,
+                                opacity: style.lineOpacity || 0.8,
+                                fillColor: style.polyColor || '#3498db',
+                                fillOpacity: style.polyOpacity || 0.3
+                            };
+                            if (Object.prototype.hasOwnProperty.call(style, 'fill')) style._leafletStyle.fill = style.fill;
+                            if (Object.prototype.hasOwnProperty.call(style, 'outline')) style._leafletStyle.stroke = style.outline;
+                        }
+                        return style._leafletStyle;
+                    }
+                }
+                return { color: '#3498db', weight: 4, opacity: 0.8, fillColor: '#3498db', fillOpacity: 0.3 };
+            },
+            pointToLayer: function(feature, latlng) {
+                // 转换点坐标
+                var [lng, lat] = wgs84ToGcj02(latlng.lng, latlng.lat);
+                var newLatLng = L.latLng(lat, lng);
+                
+                if (feature.properties && feature.properties.styleUrl) {
+                    var styleId = feature.properties.styleUrl.replace('#', '');
+                    if (styles[styleId] && styles[styleId].pairs && styles[styleId].pairs.normal) {
+                        styleId = styles[styleId].pairs.normal;
+                    }
+                    var style = styles[styleId];
+                    if (style && style.iconUrl) {
+                        var iconSize = [10, 10];
+                        if (style.iconScale) {
+                            iconSize = [10 * style.iconScale, 10 * style.iconScale];
+                        }
+                        var iconOptions = { iconUrl: style.iconUrl, iconSize: iconSize };
+                        if (style.hotSpot) {
+                            var ax = style.hotSpot.xunits === 'fraction' ? style.hotSpot.x * iconSize[0] : style.hotSpot.x;
+                            var ay = style.hotSpot.yunits === 'fraction' ? (1 - style.hotSpot.y) * iconSize[1] : iconSize[1] - style.hotSpot.y;
+                            iconOptions.iconAnchor = [ax, ay];
+                        }
+                        return L.marker(newLatLng, { icon: L.icon(iconOptions), pane: layerPaneName });
+                    }
+                }
+                return L.marker(newLatLng, { pane: layerPaneName });
+            },
+            onEachFeature: function(feature, layer) {
+                var popupContent = '';
+                if (feature.properties) {
+                    if (feature.properties.name) popupContent += '<strong>' + feature.properties.name + '</strong>';
+                    if (feature.properties.description) popupContent += '<p>' + feature.properties.description + '</p>';
+                }
+                if (popupContent) layer.bindPopup('<div class="custom-popup">' + popupContent + '</div>');
+
+                importedLayerGroup.addLayer(layer);
+                importedLayersList.push(layer);
+            },
+            pane: layerPaneName
+        });
+
+        layerEntry.heatPoints = newHeatPoints;
+        layerEntry.subLayers = importedLayersList;
+        layerEntry.featureSummary = summarizeImportedLayerTypes(importedLayersList);
+        layerEntry._lazyLoaded = true;
+
+        updateInfoPanel(`${layerEntry.name} 加载完成（${importedLayersList.length} 个要素）`);
+        return true;
+    } catch (error) {
+        console.error(`懒加载 KML 失败: ${fileName}`, error);
+        updateInfoPanel(`${layerEntry.name} 加载失败：${error.message}`);
+        return false;
+    }
+}
+
+// 批量懒加载指定名称的 KML 图层（用于选址评分依赖）
+async function ensureScoringKmlLoaded() {
+    const needed = ['公交站', '地铁站', '主要道路'];
+    const promises = [];
+    getAllLayerEntries().forEach(function(entry) {
+        if (needed.some(function(n) { return entry.name && entry.name.indexOf(n) !== -1; })) {
+            if (entry._lazyKml && !entry._lazyLoaded) {
+                promises.push(ensureKmlLayerLoaded(entry));
+            }
+        }
+    });
+    if (promises.length > 0) {
+        await Promise.all(promises);
     }
 }
 
@@ -3157,8 +3443,12 @@ function initViewSwitcher() {
 
 // ====== 选址评分模块 ======
 let scoringMode = false;
-let scoringMarker = null;
-let scoringCircle = null;
+let currentScoringRound = 1; // 1表示第一次选址，2表示第二次选址
+let scoringMarker1 = null; // 第一次选址标记
+let scoringCircle1 = null; // 第一次选址圆圈
+let scoringMarker2 = null; // 第二次选址标记
+let scoringCircle2 = null; // 第二次选址圆圈
+let scoringResults = {}; // 存储两次选址结果
 let scoringLandPriceAnchors = [];
 let scoringBakeryCompetitors = [];
 let scoringBusStopPoints = [];
@@ -3205,7 +3495,10 @@ async function loadScoringData() {
         console.error('加载烘焙竞品数据失败:', e);
     }
 
-    // 从 bus_stops.kml 中提取坐标（已在 layers 中加载）
+    // 确保评分依赖的 KML 已懒加载
+    await ensureScoringKmlLoaded();
+
+    // 从 bus_stops.kml 中提取坐标
     extractBusStopPoints();
 
     // 从 metro_stations.kml 中提取地铁站坐标
@@ -3548,39 +3841,93 @@ async function performScoring(latlng) {
     var competition = scoreCompetition(lat, lng);
     var composite = computeCompositeScore(transport, population, landPrice, competition);
 
+    // 存储选址结果
+    scoringResults[currentScoringRound] = {
+        lat: lat,
+        lng: lng,
+        transport: transport,
+        population: population,
+        landPrice: landPrice,
+        competition: competition,
+        composite: composite
+    };
+
     renderScoringResult(lat, lng, transport, population, landPrice, competition, composite);
 
-    // 地图上显示标记
-    if (scoringMarker) {
-        map.removeLayer(scoringMarker);
+    // 根据当前选址轮次使用不同的颜色和变量
+    if (currentScoringRound === 1) {
+        // 第一次选址 - 蓝色
+        if (scoringMarker1) {
+            map.removeLayer(scoringMarker1);
+        }
+        if (scoringCircle1) {
+            map.removeLayer(scoringCircle1);
+        }
+
+        scoringCircle1 = L.circle([lat, lng], {
+            radius: SCORING_RADIUS_M,
+            color: '#2f6fff',
+            fillColor: '#2f6fff',
+            fillOpacity: 0.08,
+            weight: 2,
+            dashArray: '6 4'
+        }).addTo(map);
+
+        scoringMarker1 = L.marker([lat, lng], {
+            icon: L.divIcon({
+                className: 'scoring-marker-icon',
+                html: '<div style="background:linear-gradient(135deg,#2f6fff,#89b7ff);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:800;box-shadow:0 3px 12px rgba(47,111,255,0.35);border:3px solid #fff;">1</div>',
+                iconSize: [36, 36],
+                iconAnchor: [18, 18]
+            })
+        }).addTo(map);
+
+        scoringMarker1.bindPopup(
+            '<div class="custom-popup"><strong>候选烘焙店选址 #1</strong>' +
+            '<p>综合评分：<b>' + composite.toFixed(1) + ' / 10</b></p>' +
+            '<p>WGS84：' + lat.toFixed(6) + ', ' + lng.toFixed(6) + '</p></div>'
+        );
+
+        // 提示用户进行第二次选址
+        document.getElementById('scoringHint').textContent = '第一次选址完成，请再次点击地图进行第二次选址';
+        currentScoringRound = 2;
+    } else {
+        // 第二次选址 - 绿色
+        if (scoringMarker2) {
+            map.removeLayer(scoringMarker2);
+        }
+        if (scoringCircle2) {
+            map.removeLayer(scoringCircle2);
+        }
+
+        scoringCircle2 = L.circle([lat, lng], {
+            radius: SCORING_RADIUS_M,
+            color: '#22c55e',
+            fillColor: '#22c55e',
+            fillOpacity: 0.08,
+            weight: 2,
+            dashArray: '6 4'
+        }).addTo(map);
+
+        scoringMarker2 = L.marker([lat, lng], {
+            icon: L.divIcon({
+                className: 'scoring-marker-icon',
+                html: '<div style="background:linear-gradient(135deg,#22c55e,#86efac);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:800;box-shadow:0 3px 12px rgba(34,197,94,0.35);border:3px solid #fff;">2</div>',
+                iconSize: [36, 36],
+                iconAnchor: [18, 18]
+            })
+        }).addTo(map);
+
+        scoringMarker2.bindPopup(
+            '<div class="custom-popup"><strong>候选烘焙店选址 #2</strong>' +
+            '<p>综合评分：<b>' + composite.toFixed(1) + ' / 10</b></p>' +
+            '<p>WGS84：' + lat.toFixed(6) + ', ' + lng.toFixed(6) + '</p></div>'
+        );
+
+        // 显示两次选址对比结果
+        showScoringComparison();
+        document.getElementById('scoringHint').textContent = '两次选址完成，已显示对比结果';
     }
-    if (scoringCircle) {
-        map.removeLayer(scoringCircle);
-    }
-
-    scoringCircle = L.circle([lat, lng], {
-        radius: SCORING_RADIUS_M,
-        color: '#2f6fff',
-        fillColor: '#2f6fff',
-        fillOpacity: 0.08,
-        weight: 2,
-        dashArray: '6 4'
-    }).addTo(map);
-
-    scoringMarker = L.marker([lat, lng], {
-        icon: L.divIcon({
-            className: 'scoring-marker-icon',
-            html: '<div style="background:linear-gradient(135deg,#2f6fff,#89b7ff);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:800;box-shadow:0 3px 12px rgba(47,111,255,0.35);border:3px solid #fff;">' + composite.toFixed(1) + '</div>',
-            iconSize: [36, 36],
-            iconAnchor: [18, 18]
-        })
-    }).addTo(map);
-
-    scoringMarker.bindPopup(
-        '<div class="custom-popup"><strong>候选烘焙店选址</strong>' +
-        '<p>综合评分：<b>' + composite.toFixed(1) + ' / 10</b></p>' +
-        '<p>WGS84：' + lat.toFixed(6) + ', ' + lng.toFixed(6) + '</p></div>'
-    );
 
     document.getElementById('clearScoringBtn').style.display = '';
 
@@ -3588,17 +3935,82 @@ async function performScoring(latlng) {
 }
 
 function clearScoring() {
-    if (scoringMarker) {
-        map.removeLayer(scoringMarker);
-        scoringMarker = null;
+    // 清除第一次选址结果
+    if (scoringMarker1) {
+        map.removeLayer(scoringMarker1);
+        scoringMarker1 = null;
     }
-    if (scoringCircle) {
-        map.removeLayer(scoringCircle);
-        scoringCircle = null;
+    if (scoringCircle1) {
+        map.removeLayer(scoringCircle1);
+        scoringCircle1 = null;
     }
+    
+    // 清除第二次选址结果
+    if (scoringMarker2) {
+        map.removeLayer(scoringMarker2);
+        scoringMarker2 = null;
+    }
+    if (scoringCircle2) {
+        map.removeLayer(scoringCircle2);
+        scoringCircle2 = null;
+    }
+    
+    // 重置选址轮次和结果
+    currentScoringRound = 1;
+    scoringResults = {};
+    
     document.getElementById('scoringResultCard').style.display = 'none';
     document.getElementById('clearScoringBtn').style.display = 'none';
     document.getElementById('scoringHint').textContent = '点击地图任意位置，选择烘焙店候选点进行评分';
+}
+
+// 显示两次选址对比结果
+function showScoringComparison() {
+    if (!scoringResults[1] || !scoringResults[2]) return;
+    
+    const result1 = scoringResults[1];
+    const result2 = scoringResults[2];
+    
+    const comparisonHtml = `
+        <div class="scoring-comparison">
+            <h4>选址对比结果</h4>
+            <div class="scoring-comparison-grid">
+                <div class="scoring-comparison-item">
+                    <div class="scoring-comparison-label">选址 #1 (蓝色)</div>
+                    <div class="scoring-comparison-score">${result1.composite.toFixed(1)}</div>
+                </div>
+                <div class="scoring-comparison-item">
+                    <div class="scoring-comparison-label">选址 #2 (绿色)</div>
+                    <div class="scoring-comparison-score">${result2.composite.toFixed(1)}</div>
+                </div>
+            </div>
+            <div class="scoring-comparison-winner">
+                ${result1.composite > result2.composite ? 
+                    '选址 #1 (蓝色) 综合评分更高' : 
+                    result2.composite > result1.composite ? 
+                    '选址 #2 (绿色) 综合评分更高' : 
+                    '两次选址评分相同'}
+            </div>
+        </div>
+    `;
+    
+    // 确保评分结果卡片显示
+    document.getElementById('scoringResultCard').style.display = 'block';
+    
+    // 在评分结果下方添加对比信息
+    const scoringResultContent = document.getElementById('scoringResultContent');
+    if (scoringResultContent) {
+        // 检查是否已经存在对比结果，如果存在则更新
+        let comparisonDiv = document.querySelector('.scoring-comparison');
+        if (comparisonDiv) {
+            comparisonDiv.innerHTML = comparisonHtml;
+        } else {
+            // 创建新的对比结果容器
+            const newComparisonDiv = document.createElement('div');
+            newComparisonDiv.innerHTML = comparisonHtml;
+            scoringResultContent.appendChild(newComparisonDiv);
+        }
+    }
 }
 
 function setScoringMode(active) {
@@ -3654,9 +4066,10 @@ function initScoringControls() {
             slider.addEventListener('input', function() {
                 valueEl.textContent = this.value;
                 // 如果已有选址，重新计算
-                if (scoringMarker) {
-                    var latlng = scoringMarker.getLatLng();
-                    performScoring(latlng);
+                if (scoringResults[1]) {
+                    performScoring(L.latLng(scoringResults[1].lat, scoringResults[1].lng));
+                } else if (scoringResults[2]) {
+                    performScoring(L.latLng(scoringResults[2].lat, scoringResults[2].lng));
                 }
             });
         }
@@ -3668,8 +4081,10 @@ function initScoringControls() {
         scoringHourEl.addEventListener('change', function() {
             var hour = this.value;
             ensurePopulationHourLoaded(hour).then(function() {
-                if (scoringMarker) {
-                    performScoring(scoringMarker.getLatLng());
+                if (scoringResults[1]) {
+                    performScoring(L.latLng(scoringResults[1].lat, scoringResults[1].lng));
+                } else if (scoringResults[2]) {
+                    performScoring(L.latLng(scoringResults[2].lat, scoringResults[2].lng));
                 }
             });
         });
@@ -3683,6 +4098,158 @@ function initScoringControls() {
     });
 }
 
+// ====== AI助手功能 ======
+function initAIAssistant() {
+    const aiAssistantBtn = document.getElementById('aiAssistantBtn');
+    const aiAssistant = document.getElementById('aiAssistant');
+    const closeAIAssistant = document.getElementById('closeAIAssistant');
+    const aiAssistantInput = document.getElementById('aiAssistantInput');
+    const sendAIMessage = document.getElementById('sendAIMessage');
+    const aiAssistantBody = document.getElementById('aiAssistantBody');
+
+    // 显示AI助手悬浮按钮
+    if (aiAssistantBtn) {
+        aiAssistantBtn.style.display = 'grid';
+    }
+
+    // 打开AI助手
+    if (aiAssistantBtn && aiAssistant) {
+        aiAssistantBtn.addEventListener('click', function() {
+            aiAssistant.style.display = 'flex';
+            aiAssistantBtn.style.display = 'none';
+        });
+    }
+
+    // 关闭AI助手
+    if (closeAIAssistant && aiAssistant && aiAssistantBtn) {
+        closeAIAssistant.addEventListener('click', function() {
+            aiAssistant.style.display = 'none';
+            aiAssistantBtn.style.display = 'grid';
+        });
+    }
+
+    // 发送消息
+    function sendMessage() {
+        const message = aiAssistantInput.value.trim();
+        if (!message) return;
+
+        // 添加用户消息
+        addMessage('user', message);
+        aiAssistantInput.value = '';
+
+        // 生成AI回复
+        setTimeout(() => {
+            const response = generateAIResponse(message);
+            addMessage('ai', response);
+        }, 500);
+    }
+
+    // 发送按钮点击事件
+    if (sendAIMessage) {
+        sendAIMessage.addEventListener('click', sendMessage);
+    }
+
+    // 回车键发送
+    if (aiAssistantInput) {
+        aiAssistantInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    // 添加消息到聊天窗口
+    function addMessage(type, content) {
+        if (!aiAssistantBody) return;
+
+        const messageDiv = document.createElement('div');
+        messageDiv.className = type === 'user' ? 'user-message' : 'ai-message';
+
+        const messageContent = document.createElement('div');
+        messageContent.className = type === 'user' ? 'user-message-content' : 'ai-message-content';
+        messageContent.innerHTML = `<p>${content}</p>`;
+
+        messageDiv.appendChild(messageContent);
+        aiAssistantBody.appendChild(messageDiv);
+
+        // 滚动到底部
+        aiAssistantBody.scrollTop = aiAssistantBody.scrollHeight;
+    }
+
+    // 生成AI回复
+    function generateAIResponse(message) {
+        message = message.toLowerCase();
+
+        // 基于选址评分结果的回复
+        if (scoringResults[1] || scoringResults[2]) {
+            const scoringResult = document.getElementById('scoringResultContent');
+            if (scoringResult) {
+                const totalScore = scoringResult.querySelector('.scoring-total-number');
+                if (totalScore) {
+                    const score = parseFloat(totalScore.textContent);
+                    
+                    if (message.includes('评分') || message.includes('选址') || message.includes('怎么样')) {
+                        // 获取当前选址结果
+                        let currentResult;
+                        if (scoringResults[2]) {
+                            currentResult = scoringResults[2];
+                        } else if (scoringResults[1]) {
+                            currentResult = scoringResults[1];
+                        } else {
+                            return `该位置综合评分为 ${score} 分，适合开设烘焙店。各方面条件较为均衡，可以考虑。`;
+                        }
+                        
+                        if (score >= 8) {
+                            return `该位置综合评分为 ${score} 分，非常适合开设烘焙店。\n\n分析详情：\n- 交通便利度：${currentResult.transport.score.toFixed(1)} 分\n- 人口密度：${currentResult.population.score.toFixed(1)} 分\n- 地价适宜度：${currentResult.landPrice.score.toFixed(1)} 分\n- 竞争压力：${currentResult.competition.score.toFixed(1)} 分\n\n优势：交通便利，人口密度高，地价适宜，竞争压力适中。\n建议：优先考虑此位置，可作为主要候选选址。`;
+                        } else if (score >= 6) {
+                            return `该位置综合评分为 ${score} 分，适合开设烘焙店。\n\n分析详情：\n- 交通便利度：${currentResult.transport.score.toFixed(1)} 分\n- 人口密度：${currentResult.population.score.toFixed(1)} 分\n- 地价适宜度：${currentResult.landPrice.score.toFixed(1)} 分\n- 竞争压力：${currentResult.competition.score.toFixed(1)} 分\n\n优势：各方面条件较为均衡，没有明显劣势。\n建议：可以考虑此位置，作为候选选址之一。`;
+                        } else {
+                            return `该位置综合评分为 ${score} 分，建议谨慎考虑。\n\n分析详情：\n- 交通便利度：${currentResult.transport.score.toFixed(1)} 分\n- 人口密度：${currentResult.population.score.toFixed(1)} 分\n- 地价适宜度：${currentResult.landPrice.score.toFixed(1)} 分\n- 竞争压力：${currentResult.competition.score.toFixed(1)} 分\n\n劣势：可能在交通、人口密度或其他方面存在不足。\n建议：可以尝试在周边寻找更合适的位置，或考虑改善现有条件。`;
+                        }
+                    }
+                }
+            }
+            
+            // 两次选址的对比分析
+            if (scoringResults[1] && scoringResults[2] && (message.includes('对比') || message.includes('哪个好') || message.includes('比较'))) {
+                const result1 = scoringResults[1];
+                const result2 = scoringResults[2];
+                const score1 = result1.composite;
+                const score2 = result2.composite;
+                
+                if (score1 > score2) {
+                    return `选址对比分析：\n\n选址 #1 (蓝色)：综合评分 ${score1.toFixed(1)} 分\n- 交通便利度：${result1.transport.score.toFixed(1)} 分\n- 人口密度：${result1.population.score.toFixed(1)} 分\n- 地价适宜度：${result1.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result1.competition.score.toFixed(1)} 分\n\n选址 #2 (绿色)：综合评分 ${score2.toFixed(1)} 分\n- 交通便利度：${result2.transport.score.toFixed(1)} 分\n- 人口密度：${result2.population.score.toFixed(1)} 分\n- 地价适宜度：${result2.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result2.competition.score.toFixed(1)} 分\n\n结论：选址 #1 的评分更高，更适合开设烘焙店。建议优先考虑选址 #1。`;
+                } else if (score2 > score1) {
+                    return `选址对比分析：\n\n选址 #1 (蓝色)：综合评分 ${score1.toFixed(1)} 分\n- 交通便利度：${result1.transport.score.toFixed(1)} 分\n- 人口密度：${result1.population.score.toFixed(1)} 分\n- 地价适宜度：${result1.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result1.competition.score.toFixed(1)} 分\n\n选址 #2 (绿色)：综合评分 ${score2.toFixed(1)} 分\n- 交通便利度：${result2.transport.score.toFixed(1)} 分\n- 人口密度：${result2.population.score.toFixed(1)} 分\n- 地价适宜度：${result2.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result2.competition.score.toFixed(1)} 分\n\n结论：选址 #2 的评分更高，更适合开设烘焙店。建议优先考虑选址 #2。`;
+                } else {
+                    return `选址对比分析：\n\n选址 #1 (蓝色)：综合评分 ${score1.toFixed(1)} 分\n- 交通便利度：${result1.transport.score.toFixed(1)} 分\n- 人口密度：${result1.population.score.toFixed(1)} 分\n- 地价适宜度：${result1.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result1.competition.score.toFixed(1)} 分\n\n选址 #2 (绿色)：综合评分 ${score2.toFixed(1)} 分\n- 交通便利度：${result2.transport.score.toFixed(1)} 分\n- 人口密度：${result2.population.score.toFixed(1)} 分\n- 地价适宜度：${result2.landPrice.score.toFixed(1)} 分\n- 竞争压力：${result2.competition.score.toFixed(1)} 分\n\n结论：两次选址的综合评分相同，均为 ${score1.toFixed(1)} 分。两个位置都适合开设烘焙店，您可以根据其他因素（如租金、周边环境、个人偏好等）进行选择。`;
+                }
+            }
+        }
+
+        // 通用回复
+        if (message.includes('你好') || message.includes('嗨') || message.includes('Hello')) {
+            return '您好！我是选址AI助手，很高兴为您服务。我可以帮您分析选址的可行性，提供专业的选址建议，以及对比不同选址的优劣。请问您需要了解什么？';
+        } else if (message.includes('功能') || message.includes('能做什么')) {
+            return '我是一个专业的选址分析AI助手，主要功能包括：\n1. 基于交通便利度、人口密度、地价适宜度和竞争压力四个维度进行选址评分\n2. 提供详细的评分分析和改进建议\n3. 支持两次选址对比分析\n4. 回答关于选址的各类问题\n5. 提供选址相关的专业知识和建议\n\n您可以通过点击地图选择位置，然后向我咨询关于该位置的分析结果。';
+        } else if (message.includes('评分标准') || message.includes('如何评分')) {
+            return '评分标准基于四个核心维度：\n\n1. 交通便利度（30%）：\n   - 公交站密度和距离\n   - 地铁站密度和距离\n   - 主要道路通达度\n\n2. 人口密度（30%）：\n   - 周边人口数量\n   - 人口密度分布\n   - 人口流动趋势\n\n3. 地价适宜度（20%）：\n   - 周边地价水平\n   - 与商业中心的距离\n   - 区域发展潜力\n\n4. 竞争压力（20%）：\n   - 周边同类店铺数量\n   - 竞争强度分析\n   - 市场饱和度\n\n综合评分范围为0-10分，评分越高表示位置越适合开设烘焙店。';
+        } else if (message.includes('交通') || message.includes('公交') || message.includes('地铁')) {
+            return '交通便利度是选址的重要因素之一，主要考虑：\n1. 公交站和地铁站的密度和距离\n2. 主要道路的通达度\n3. 交通流量和便利性\n\n一般来说，距离公交站500米内、地铁站800米内的位置交通便利性较好。';
+        } else if (message.includes('人口') || message.includes('客流')) {
+            return '人口密度是影响烘焙店生意的关键因素：\n1. 周边常住人口数量\n2. 流动人口数量\n3. 人口结构和消费能力\n\n建议选择人口密度较高、消费能力较强的区域，如商业区、居民区、办公区等。';
+        } else if (message.includes('地价') || message.includes('租金')) {
+            return '地价适宜度需要综合考虑：\n1. 租金成本与预算的匹配度\n2. 区域发展潜力\n3. 与商业中心的距离\n\n理想的位置应该是租金合理，同时具有良好的发展前景。';
+        } else if (message.includes('竞争') || message.includes('同行')) {
+            return '竞争压力分析：\n1. 周边同类店铺的数量和分布\n2. 竞争对手的实力和特色\n3. 市场饱和度\n\n适度的竞争可以促进市场活跃，但过度竞争可能影响生意。建议选择竞争适度的区域。';
+        } else if (message.includes('如何选择') || message.includes('建议')) {
+            return '选择烘焙店位置的建议：\n1. 优先考虑交通便利、人口密度高的区域\n2. 注意租金成本与预期收益的平衡\n3. 分析周边竞争情况，避免过度竞争\n4. 考虑目标客户群体的需求和消费习惯\n5. 关注区域发展潜力和未来规划\n\n您可以使用系统的选址评分功能，通过点击地图选择位置，获取详细的评分分析。';
+        } else {
+            return '感谢您的咨询。我是一个专业的选址分析AI助手，可以为您提供以下帮助：\n1. 分析选址的可行性和评分\n2. 对比不同选址的优劣\n3. 解答关于选址的各类问题\n4. 提供专业的选址建议\n\n请问您对当前选址有什么具体问题，或者需要了解更多关于选址分析的信息吗？';
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initResponsiveLayout();
     initSidebarToggle();
@@ -3692,13 +4259,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeatmapControls();
     initPopulationTimeControls();
     initUiEnhancements();
+    initAIAssistant();
 
-    document.getElementById('exportKml').addEventListener('click', exportKML);
-    document.getElementById('importKml').addEventListener('click', importKML);
     document.getElementById('kmlFileInput').addEventListener('change', handleKMLFile);
 
     setSystemStatus('正在加载人口CSV与预置KML资源...', 'loading');
-    updateHeatmapInfo('<div class="empty-state">暂无热力图数据，请先加载点位图层或手工标绘。</div>');
     loadInitialDataResources();
 });
 
